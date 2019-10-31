@@ -34,6 +34,7 @@ class _howToUseScreen extends State<howToUseScren> {
             const EdgeInsets.all(10.0),
               color: Colors.blue[600],
               width: 48.0,
+              height: 120.0,
               child:
                   Text('Just keep clicking the buttons and maybe you\'ll get something out of this application.\nAlso check Option for more information',
               style: new TextStyle(

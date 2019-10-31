@@ -17,6 +17,7 @@ Map<int, Color> blueShades = {
 };
 MaterialColor colorCustom = MaterialColor(0xFF880E4F, blueShades);
 
+
 /// Class to pass arguments through screens
 class ScreenArguments {
   final String title;
@@ -62,7 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Column(
+      backgroundColor: blueShades[900],
+      body:  new Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -135,3 +137,4 @@ class _MyHomePageState extends State<MyHomePage> {
         context, MaterialPageRoute(builder: (context) => SecondScreen()));
   }
 }
+
