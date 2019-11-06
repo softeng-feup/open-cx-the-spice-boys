@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/OptionsScreen.dart';
 import 'secondScreen.dart';
-import 'howToUseScreen.dart';
+import 'HowToUseScreen.dart';
+import 'OptionsScreen.dart';
+import 'SearchScreen.dart';
+import 'components/CustomRaisedButton.dart';
 
 ///  Attempt at creating colors
 Map<int, Color> blueShades = {
@@ -75,66 +79,68 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             new FlatButton(
                 key: null,
-                onPressed: () => {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => howToUseScren()))
-                    },
+                onPressed: buttonPressedHowToUse,
                 child: new Text(
                   "How to use?",
                   style: new TextStyle(
                       fontSize: 12.0,
                       color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w200,
+                      fontWeight: FontWeight.w600,
                       fontFamily: "Roboto"),
                 )),
-            new RaisedButton(
-                key: null,
-                onPressed: buttonPressed,
-                color: const Color(0xFFe0e0e0),
-                child: new Text(
-                  "Search",
-                  style: new TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w200,
-                      fontFamily: "Roboto"),
-                )),
+
+           //TESTING THIS
+            new SimpleButton(
+              onPressFunction: buttonPressedSearch,
+              buttonText: "Search",
+            ),
+
             new Padding(
               padding: const EdgeInsets.all(24.0),
             ),
-            new RaisedButton(
-                key: null,
-                onPressed: buttonPressed,
-                color: const Color(0xFFe0e0e0),
-                child: new Text(
-                  "Options",
-                  style: new TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w200,
-                      fontFamily: "Roboto"),
-                )),
-            new RaisedButton(
-                key: null,
-                onPressed: buttonPressed,
-                color: const Color(0xFFe0e0e0),
-                child: new Text(
-                  "Check Map",
-                  style: new TextStyle(
-                      fontSize: 20.0,
-                      color: const Color(0xFF222000),
-                      fontWeight: FontWeight.w200,
-                      fontFamily: "Roboto"),
-                ))
+            new SimpleButton(
+              onPressFunction: buttonPressedOptions,
+              buttonText: "Options"),
+
+            new SimpleButton(
+                buttonText: "Check Map",
+                onPressFunction: buttonPressed)
+
           ]),
     );
+  }
+  void buttonPressedSearch(){
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => SearchScreen()));
+  }
+  void buttonPressedHowToUse() {
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => HowToUseScren() ));
   }
 
   void buttonPressed() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => SecondScreen()));
   }
+  void buttonPressedOptions() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => OptionsScreen()));
+  }
+
 }
 
+
+
+
+/* new RaisedButton(
+                key: null,
+                onPressed: buttonPressedSearch,
+                color: const Color(0xFFe0e0e0),
+                child: new Text(
+                  "Search",
+                  style: new TextStyle(
+                      fontSize: 12.0,
+                      color: const Color(0xFF000000),
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "Roboto"),
+                )),*/

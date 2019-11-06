@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class howToUseScren extends StatefulWidget {
-  howToUseScren({Key key}) : super(key: key);
+class HowToUseScren extends StatefulWidget {
+  HowToUseScren({Key key}) : super(key: key);
   @override
-  _howToUseScreen createState() => new _howToUseScreen();
+  _HowToUseScreen createState() => new _HowToUseScreen();
 }
 
-class _howToUseScreen extends State<howToUseScren> {
+class _HowToUseScreen extends State<HowToUseScren> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
