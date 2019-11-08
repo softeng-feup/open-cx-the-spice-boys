@@ -1,34 +1,57 @@
 {
-    "Day1":
-    {
-        "Ademar Aguiar":
-        {
-            "Aula Teoria de ESOF":{
-                "room": "B003",
-                "startTime": "1100",
-                "endTime":   "1300" 
-            },
-
-            "Pausa de Almoço":{
-                "theme": "Pausa de Almoço",
-                "room": "cantina",
-                "startTime": "13:10",
-                "endTime":   "13:59"
+    "Event": {
+        "Day1": {
+                "Aula Teoria de ESOF": {
+		    "speaker":"Ademar Aguiar",
+                    "room": "B003",
+                    "startTime": "11:00",
+                    "endTime": "13:00"
+                },
+                "Pausa de Almoço": {
+		    "speaker":"none",
+                    "theme": "Pausa de Almoço",
+                    "room": "cantina",
+                    "startTime": "13:10",
+                    "endTime": "13:59"
+                },
+                "Artificial Intelligence": {
+		    "speaker":"Ademar Aguiar",
+                    "room": "B003",
+                    "startTime": "14:00",
+                    "endTime": "16:00"
+                },
+                "Xtreme Programming": {
+		    "speaker":"Ademar Aguiar",
+                    "room": "B002",
+                    "startTime": "17:00",
+                    "endTime": "18:30"
+                }
+        },
+        "Day3": {
+                "Aula Prática de ESOF": {
+		    "speaker":"Joao Rocha",                    
+		    "room": "B202",
+                    "startTime": "11:00",
+                    "endTime": "13:00"
+                }
             }
-        }
     },
-    
-    "Day3": 
-    {
-        "Joao Rocha":
+    "User":[
         {
-            "Aula Prática de ESOF":
-            {
-                "room": "B202",
-                "startTime": "1100",
-                "endTime":   "1300" 
-            }
-
+	    "name":"Antonio",
+            "Contact_List": ["Joao12", "Manuel123"],
+            "Last_Location": "B003"
+        },
+        {
+	    "name":"Joao12",
+            "Contact_List": ["Manuel123"],
+            "Last_Location": "B001"
+        },        
+        {
+	    "name":"Manuel123",
+            "Contact_List": ["Antonio"],
+            "Last_Location": "B213"
         }
-    }
+    ]
 }
+
