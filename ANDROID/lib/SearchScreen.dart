@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'components/SimpleButton.dart';
+import 'components/CustomRaisedButton.dart';
 
 class SearchScreen extends StatefulWidget {
   SearchScreen({Key key}) : super(key: key);

@@ -4,7 +4,7 @@ import 'secondScreen.dart';
 import 'HowToUseScreen.dart';
 import 'OptionsScreen.dart';
 import 'SearchScreen.dart';
-import 'components/SimpleButton.dart';
+import 'components/CustomRaisedButton.dart';
 
 ///  Attempt at creating colors
 Map<int, Color> blueShades = {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_test/components/SimpleButton.dart';
+import 'package:flutter_app_test/components/CustomRaisedButton.dart';
 
 class OptionsScreen extends StatefulWidget {
   OptionsScreen({Key key}) : super(key: key);
