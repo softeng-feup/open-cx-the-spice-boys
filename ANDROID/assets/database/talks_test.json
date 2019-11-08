@@ -1,34 +1,42 @@
 {
-    "Day1":
-    {
-        "Ademar Aguiar":
-        {
-            "Aula Teoria de ESOF":{
-                "room": "B003",
-                "startTime": "1100",
-                "endTime":   "1300" 
-            },
-
-            "Pausa de Almoço":{
-                "theme": "Pausa de Almoço",
-                "room": "cantina",
-                "startTime": "13:10",
-                "endTime":   "13:59"
+    "Event": {
+        "Day1": {
+            "Ademar Aguiar": {
+                "Aula Teoria de ESOF": {
+                    "room": "B003",
+                    "startTime": "1100",
+                    "endTime": "1300"
+                },
+                "Pausa de Almoço": {
+                    "theme": "Pausa de Almoço",
+                    "room": "cantina",
+                    "startTime": "13:10",
+                    "endTime": "13:59"
+                }
+            }
+        },
+        "Day3": {
+            "Joao Rocha": {
+                "Aula Prática de ESOF": {
+                    "room": "B202",
+                    "startTime": "1100",
+                    "endTime": "1300"
+                }
             }
         }
     },
-    
-    "Day3": 
-    {
-        "Joao Rocha":
-        {
-            "Aula Prática de ESOF":
-            {
-                "room": "B202",
-                "startTime": "1100",
-                "endTime":   "1300" 
-            }
-
+    "User":{
+        "Antonio":{
+            "Contact_List": "Joao12, Manuel123",
+            "Last_Location": "B003"
+        },
+        "Joao12":{
+            "Contact_List": "Manuel123",
+            "Last_Location": "B001"
+        },        
+        "Manuel123":{
+            "Contact_List": "Antonio",
+            "Last_Location": "B213"
         }
     }
 }
