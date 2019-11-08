@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'components/SimpleButton.dart';
 
 class SearchScreen extends StatefulWidget {
   SearchScreen({Key key}) : super(key: key);
@@ -15,47 +16,19 @@ class _SearchScreen extends State<SearchScreen> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              new Image.asset(
-                'assets/images/toplogo_light.png',
-                fit: BoxFit.scaleDown,
-              ),
 
-        // THIS IS A WEIRD WAY TO MAINTAIN STYLING
-        new FlatButton(
-            key: null,
-            onPressed: null,
-            child: new Text(
-              "", style: new TextStyle(
-                  color: const Color(0xFF000000),
-                  fontFamily: "Roboto"),
-            )),
+              new Image.asset( 'assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
 
-            new RaisedButton(
-                  key: null,
-                  onPressed: null,    //Todo
-                  color: const Color(0xFFe0e0e0),
-                  child: new Text(
-                    "People",
-                    style: new TextStyle(
-                        fontSize: 12.0,
-                        color: const Color(0xFF000000),
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "Roboto"),
-                  )),
-            new RaisedButton(
-                key: null,
-                onPressed: null,    //Todo
-                color: const Color(0xFFe0e0e0),
-                child: new Text(
-                  "Key Spots",
-                  style: new TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Roboto"),
-                )),
+              new SimpleFlatButton( onPressFunction: null, buttonText: "Searching"),
 
+              new SimpleButton( onPressFunction: null, buttonText: "New Contact"),
 
-        ]));
+              new SimpleButton( onPressFunction: null, buttonText: "Contact List"),
+
+              new SimpleFlatButton( onPressFunction: null, buttonText: "Places"),
+
+              new SimpleButton( onPressFunction: null, buttonText: "Key Places"),
+
+            ]));
   }
 }

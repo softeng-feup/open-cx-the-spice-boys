@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/components/SimpleButton.dart';
 
 class HowToUseScren extends StatefulWidget {
   HowToUseScren({Key key}) : super(key: key);
@@ -15,35 +16,24 @@ class _HowToUseScreen extends State<HowToUseScren> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-          new Image.asset(
-            'assets/images/toplogo_light.png',
-            fit: BoxFit.scaleDown,
-          ),
-          new FlatButton(
-              key: null,
-              onPressed: null,
-              child: new Text(
-                "How to use?",
-                style: new TextStyle(
-                    fontSize: 12.0,
-                    color: const Color(0xFF000000),
-                    fontWeight: FontWeight.w200,
-                    fontFamily: "Roboto"),
-              )),
+          new Image.asset( 'assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
+
+          new SimpleFlatButton( onPressFunction: null, buttonText: "How to use"),
+
             new Container(margin:
-            const EdgeInsets.all(10.0),
-              color: Colors.blue[600],
-              width: 48.0,
-              height: 120.0,
-              child:
-                  Text('Just keep clicking the buttons and maybe you\'ll get something out of this application.\nAlso check Option for more information',
-              style: new TextStyle(
-                  fontSize: 20.0,
-                  color: const Color(0xFFFFFFFF),
-                  fontWeight: FontWeight.w400,
-                  fontFamily: "Roboto"),
-            )
-            ),
-        ]));
-  }
+          const EdgeInsets.all(10.0),
+            color: Colors.blue[600],
+            width: 48.0,
+            height: 120.0,
+            child:
+                Text('Just keep clicking the buttons and maybe you\'ll get something out of this application.\nAlso check Option for more information',
+            style: new TextStyle(
+                fontSize: 20.0,
+                color: const Color(0xFFFFFFFF),
+                fontWeight: FontWeight.w400,
+                fontFamily: "Roboto"),
+          )
+          ),
+      ]));
+}
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/components/SimpleButton.dart';
 
 class OptionsScreen extends StatefulWidget {
   OptionsScreen({Key key}) : super(key: key);
@@ -19,17 +20,8 @@ class _OptionsScreen extends State<OptionsScreen> {
                   'assets/images/toplogo_light.png',
                   fit: BoxFit.scaleDown,
                 ),
-                new FlatButton(
-                    key: null,
-                    onPressed: null,
-                    child: new Text(
-                      "How to use?",
-                      style: new TextStyle(
-                          fontSize: 12.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w200,
-                          fontFamily: "Roboto"),
-                    )),
+                new SimpleFlatButton(buttonText: "Options", onPressFunction: null),
+
                 new Container(margin:
                 const EdgeInsets.all(10.0),
                     color: Colors.blue[600],

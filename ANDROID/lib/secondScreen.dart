@@ -15,8 +15,11 @@ class _SecondScreen extends State<SecondScreen> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-
               new Image.asset('assets/images/mainLogo.png', fit: BoxFit.scaleDown)
-            ]));
+            ]
+        ,
+
+        // add new Widgets here.
+        ));
   }
 }

@@ -4,7 +4,7 @@ import 'secondScreen.dart';
 import 'HowToUseScreen.dart';
 import 'OptionsScreen.dart';
 import 'SearchScreen.dart';
-import 'components/CustomRaisedButton.dart';
+import 'components/SimpleButton.dart';
 
 ///  Attempt at creating colors
 Map<int, Color> blueShades = {
@@ -73,42 +73,25 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            new Image.asset(
-              'assets/images/toplogo_light.png',
-              fit: BoxFit.scaleDown,
-            ),
-            new FlatButton(
-                key: null,
-                onPressed: buttonPressedHowToUse,
-                child: new Text(
-                  "How to use?",
-                  style: new TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Roboto"),
-                )),
+            new Image.asset('assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
 
-           //TESTING THIS
-            new SimpleButton(
-              onPressFunction: buttonPressedSearch,
-              buttonText: "Search",
-            ),
+            new SimpleFlatButton(buttonText: "How to use?", onPressFunction: buttonPressedHowToUse),
+
+            new SimpleButton( buttonText: "Search",onPressFunction: buttonPressedSearch),
 
             new Padding(
               padding: const EdgeInsets.all(24.0),
             ),
-            new SimpleButton(
-              onPressFunction: buttonPressedOptions,
-              buttonText: "Options"),
 
-            new SimpleButton(
-                buttonText: "Check Map",
-                onPressFunction: buttonPressed)
+            new SimpleButton( buttonText: "Options" , onPressFunction: buttonPressedOptions),
+
+            new SimpleButton( buttonText: "Check Map", onPressFunction: buttonPressed)
 
           ]),
     );
   }
+
+  /// Functions implementation
   void buttonPressedSearch(){
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => SearchScreen()));
