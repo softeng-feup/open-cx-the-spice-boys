@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
+import 'constants.dart';
 
 class SimpleButton extends RaisedButton
 {
@@ -25,11 +25,11 @@ class SimpleButton extends RaisedButton
             fontSize: 32.0,
             color: const Color(0xFF000000),
             fontWeight: FontWeight.w700,
-            fontFamily: "Roboto"),
+            fontFamily: FONTFAMILY),
       ));
 }
 
-class SimpleFlatButton extends RaisedButton
+class SimpleFlatButton extends FlatButton
 {
   final String buttonText;
   final Function onPressFunction;
@@ -52,6 +52,6 @@ class SimpleFlatButton extends RaisedButton
                 fontSize: 20.0,
                 color: const Color(0xFFFFFFFF),
                 fontWeight: FontWeight.w400,
-                fontFamily: "Roboto"),
+                fontFamily: FONTFAMILY),
             ));
 }

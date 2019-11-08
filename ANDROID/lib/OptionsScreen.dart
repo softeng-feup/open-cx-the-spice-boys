@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_test/components/CustomRaisedButton.dart';
+import 'components/constants.dart';
 
 class OptionsScreen extends StatefulWidget {
   OptionsScreen({Key key}) : super(key: key);
@@ -11,7 +12,9 @@ class _OptionsScreen extends State<OptionsScreen> {
   @override
     Widget build(BuildContext context) {
       return new Scaffold(
+          backgroundColor: blueShades[900],
           body: new Column(
+
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -22,21 +25,14 @@ class _OptionsScreen extends State<OptionsScreen> {
                 ),
                 new SimpleFlatButton(buttonText: "Options", onPressFunction: null),
 
-                new Container(margin:
-                const EdgeInsets.all(10.0),
-                    color: Colors.blue[600],
-                    width: 48.0,
-                    height: 120.0,
-                    child:
-                    Text(
-                      'OPTIONS HERE',
-                      style: new TextStyle(
-                          fontSize: 40.0,
-                          color: const Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto"),
-                    )
-                ),
+                new SimpleButton(buttonText: "Toggle visibitly**", onPressFunction: buttonAlert)
               ]));
-    }
+
+  }
+  void buttonAlert()
+  {
+    Navigator.of(context).pop();
+  }
+
+
   }

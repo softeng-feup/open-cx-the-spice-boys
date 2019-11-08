@@ -25,6 +25,9 @@ class _SearchScreen extends State<SearchScreen> {
 
               new SimpleButton( onPressFunction: null, buttonText: "Contact List"),
 
+              new Padding(
+                padding: const EdgeInsets.all(24.0),
+              ),
               new SimpleFlatButton( onPressFunction: null, buttonText: "Places"),
 
               new SimpleButton( onPressFunction: null, buttonText: "Key Places"),
