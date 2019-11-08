@@ -9,7 +9,7 @@ import 'components/CustomRaisedButton.dart';
 import 'components/constants.dart';
 
 ///  Attempt at creating colors
-MaterialColor colorCustom = MaterialColor(0xFF880E4F, blueShades);
+MaterialColor colorCustom = MaterialColor(0xFF880E4F, colorPallete);
 
 
 /// Class to pass arguments through screens
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: blueShades[900],
+      backgroundColor: colorPallete[900],
       body:  new Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,

@@ -12,7 +12,7 @@ class _OptionsScreen extends State<OptionsScreen> {
   @override
     Widget build(BuildContext context) {
       return new Scaffold(
-          backgroundColor: blueShades[900],
+          backgroundColor: colorPallete[900],
           body: new Column(
 
               mainAxisAlignment: MainAxisAlignment.start,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_test/components/CustomRaisedButton.dart';
+import 'package:flutter_app_test/components/constants.dart';
 
 class HowToUseScren extends StatefulWidget {
   HowToUseScren({Key key}) : super(key: key);
@@ -22,7 +23,7 @@ class _HowToUseScreen extends State<HowToUseScren> {
 
             new Container(margin:
           const EdgeInsets.all(10.0),
-            color: Colors.blue[600],
+            color: colorPallete[600],
             width: 48.0,
             height: 120.0,
             child:
