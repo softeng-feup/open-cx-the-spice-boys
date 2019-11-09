@@ -6,8 +6,8 @@
 
 ### User Stories
  **1**. As a non-authenticated user (guest), I want to find the room a certain event so that I can attend
- - [ ] Create Navigation until desired screen
- - [ ] Support user input (form-fields, text inputs)
+ - [x] Create Navigation until desired screen
+ - [x] Support user input (form-fields, text inputs)
  - [ ] Display some information to user (accuracy not-required)
  - [ ] Not crash
 
@@ -24,10 +24,10 @@
 
 ### Helpful features:
 
- - [ ] Global Styling 
+ - [x] Global Styling 
  - [ ] Resusable components
-	 - [ ] SimpleButton
-	 - [ ] SimpleFlatButton
+	 - [x] SimpleButton
+	 - [x] SimpleFlatButton
 	 - [ ] ...(add more here).
  - [ ] Log-in mechanism
  - [ ] Connect to Web 
