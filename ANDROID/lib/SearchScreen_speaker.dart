@@ -10,6 +10,31 @@ class SearchScreen_speaker extends StatefulWidget {
 }
 
 class _SearchScreen_speaker extends State<SearchScreen_speaker> {
+final controller = TextEditingController();
+
+_printLatestValue() {
+  debugPrint("Second text field: ${controller.text}");
+}
+
+  void initState() {
+    controller.addListener(() {
+//      final text = controller.text.toLowerCase();
+//      controller.value = controller.value.copyWith(
+//        text: text,
+//        selection:
+//          TextSelection(baseOffset: text.length, extentOffset: text.length),
+//          composing: TextRange.empty,
+//      );
+    _printLatestValue();
+    });
+    super.initState();
+  }
+
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -22,28 +47,25 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker> {
 
               new Image.asset( 'assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
 
-
-
               new Text(
                   "Spreach your Speaker",
                   textAlign: TextAlign.center,
                   style: subTitleStyle),
 
-              new TextFormField(style: subTitleStyle,
-                    decoration: InputDecoration(
-                      labelText: 'Speaker name'
-                    ), onSaved: (String value) {
-                      // This optional block of code can be used to run
-                      // code when the user saves the form.
-                    },
-                    // validator: (String value) {
-                    //   return value.contains('@') ? 'Do not use the @ char.' : null;
-                    // },
-                  ),
+              new TextField(
+                autofocus: true,
+                controller: controller,
 
+//                onSubmitted: (text)
+//                {debugPrint(text);},
+//                onChanged: (text) {
+//                debugPrint(text);              },
 
-
+                  style: subTitleStyle,
+              ),
 
             ]));
   }
 }
+
+

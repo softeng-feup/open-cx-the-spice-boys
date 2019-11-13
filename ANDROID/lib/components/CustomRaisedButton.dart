@@ -56,28 +56,3 @@ class SimpleFlatButton extends FlatButton
             ));
 }
 
-// class CustomSubTitle extends Text
-// {
-//   final String text;
-
-//   CustomSubTitle(
-//       {
-//         @required this.text,
-//       }
-//       )
-
-//   @override
-//   Widget build(BuildContext context) => Text
-//   (
-//     text,
-//     textAlign: TextAlign.center,
-//     overflow: TextOverflow.ellipsis,
-//     style: TextStyle(
-     
-//     ),
-
-//   );
-// }
-
-
-
