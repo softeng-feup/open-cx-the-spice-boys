@@ -1,57 +1,81 @@
 {
-    "Event": {
-        "Day1": {
-                "Aula Teoria de ESOF": {
-		    "speaker":"Ademar Aguiar",
-                    "room": "B003",
-                    "startTime": "11:00",
-                    "endTime": "13:00"
-                },
-                "Pausa de Almoço": {
-		    "speaker":"none",
-                    "theme": "Pausa de Almoço",
-                    "room": "cantina",
-                    "startTime": "13:10",
-                    "endTime": "13:59"
-                },
-                "Artificial Intelligence": {
-		    "speaker":"Ademar Aguiar",
-                    "room": "B003",
-                    "startTime": "14:00",
-                    "endTime": "16:00"
-                },
-                "Xtreme Programming": {
-		    "speaker":"Ademar Aguiar",
-                    "room": "B002",
-                    "startTime": "17:00",
-                    "endTime": "18:30"
-                }
+    
+    "conference" : [
+            {
+                "day": "1",
+                "events":[
+                    {
+                    
+                        "name": "Aula Teoria de ESOF",
+                        "speaker":"Ademar Aguiar",
+                        "room": "B003",
+                        "startTime": "11:00",
+                        "endTime": "13:00"
+                    },
+                    {
+                        "name":"Pausa de Almoço",
+                        "speaker":"none",
+                        "room": "cantina",
+                        "startTime": "13:10",
+                        "endTime": "13:59"
+                    },
+                    {
+                        "name":"Artificial Intelligence",
+                        "speaker":"Ademar Aguiar",
+                        "room": "B003",
+                        "startTime": "14:00",
+                        "endTime": "16:00"
+                    },
+                    {
+                        "name":"Xtreme Programming",
+                        "speaker":"Ademar Aguiar",
+                        "room": "B002",
+                        "startTime": "17:00",
+                        "endTime": "18:30"
+                    }
+                ]
         },
-        "Day3": {
-                "Aula Prática de ESOF": {
-		    "speaker":"Joao Rocha",                    
-		    "room": "B202",
-                    "startTime": "11:00",
-                    "endTime": "13:00"
+        {
+            "day": "2",
+            "events" : [
+                {
+                    "name":"Aula Prática de ESOF",
+                    "speaker":"Joao Rocha",                    
+                    "room": "B202",
+                            "startTime": "11:00",
+                            "endTime": "13:00"
                 }
-            }
-    },
+            ]
+        },
+        {   
+            "day":"3",
+            "events" : [
+                {
+                    "name":"Aula Prática de ESOF",
+                    "speaker":"Joao Rocha",                    
+                    "room": "B202",
+                            "startTime": "11:00",
+                            "endTime": "13:00"
+                }
+            ]
+        }
+    ],
+        
     "User":[
         {
-	    "name":"Antonio",
+	        "name":"Antonio",
             "Contact_List": ["Joao12", "Manuel123"],
             "Last_Location": "B003"
         },
         {
-	    "name":"Joao12",
+	        "name":"Joao12",
             "Contact_List": ["Manuel123"],
             "Last_Location": "B001"
         },        
         {
-	    "name":"Manuel123",
+	        "name":"Manuel123",
             "Contact_List": ["Antonio"],
             "Last_Location": "B213"
         }
     ]
 }
-
