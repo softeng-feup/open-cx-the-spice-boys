@@ -40,7 +40,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        "/": (context) => new MyHomePage(),
+        "/": (context) => new LoginScreen(),
+        "/main": (context) => new MyHomePage(),
         "/SecondPage": (context) => new SecondScreen(),
       },
     );
@@ -80,7 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ]),
     );
   }
-
   /// Functions implementation
   void buttonPressedSearch(){
     Navigator.push(
@@ -99,21 +99,85 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => OptionsScreen()));
   }
-
 }
 
 
 
 
-/* new RaisedButton(
-                key: null,
-                onPressed: buttonPressedSearch,
-                color: const Color(0xFFe0e0e0),
-                child: new Text(
-                  "Search",
-                  style: new TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Roboto"),
-                )),*/
+/// LOGIN-screen
+class LoginScreen extends StatefulWidget {
+  LoginScreen({Key key}) : super(key: key);
+  @override
+  _LoginScreen createState() => new _LoginScreen();
+}
+
+/// LOGIN-screen
+class _LoginScreen extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      backgroundColor: colorPallete[900],
+      body:  SingleChildScrollView(
+        child: Stack(
+          children: <Widget>[
+      new Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+
+            new Padding( padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.02)),
+
+            /// logo
+            new Container(
+              height: MediaQuery.of(context).size.height * 0.25,
+              child: new Image.asset('assets/images/mainLogo.png', fit: BoxFit.scaleDown),
+            ),
+          
+            new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.05)),
+
+            /// texto
+            new Container(
+              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.06 ),
+              child:
+              new Text("Username",
+                  //textAlign: TextAlign.center,
+                  style: subTitleStyle)),
+
+            /// Forms para password e Login.
+            new Container(
+                color: colorPallete[800],
+                child:
+                new TextFormField( obscureText: true,
+                )            )
+            ,
+
+            new Padding(padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.02)),
+
+            new Container(
+                padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.06 ),
+                child:
+                new Text("Password",
+                    //textAlign: TextAlign.center,
+                    style: subTitleStyle)),
+
+            new Container(
+                color: colorPallete[800],
+                child:
+                  new TextFormField( obscureText: true,
+            )            )
+            ,
+
+            new Padding(padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.0125)),
+
+            new SimpleButton(buttonText: "Login", onPressFunction: logInAttempt),    //TODO define log in function
+
+
+          ])],
+        )));
+    }
+  /// Functions implementation
+  void logInAttempt() {
+        Navigator.pushNamed(context, '/main');
+  }
+}

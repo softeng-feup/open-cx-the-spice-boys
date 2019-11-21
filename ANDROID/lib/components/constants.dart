@@ -9,7 +9,7 @@ Map<int, Color> colorPallete = {
   500: Color.fromRGBO(36, 52, 112, .6),
   600: Color.fromRGBO(0, 0, 0, 1),   // black
 
-  700: Color.fromRGBO(36, 52, 112, .7),
+  700: Color.fromRGBO(36, 52, 112, .9),
   
   800: Color.fromRGBO(255, 255, 255, 1),   // white
   900: Color.fromRGBO(36, 52, 112, 1),    //Background blue
