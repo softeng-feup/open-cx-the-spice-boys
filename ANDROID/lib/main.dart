@@ -64,7 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            new Image.asset('assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
+            new SpearchLogo(),
+
+            new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.05)),
 
             new SimpleFlatButton(buttonText: "How to use?", onPressFunction: buttonPressedHowToUse),
 

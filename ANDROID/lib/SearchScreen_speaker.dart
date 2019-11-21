@@ -29,7 +29,7 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
 {
   final controller = TextEditingController();
 
-  // Function that displays the possible speakers when as users writes each letter
+  /// Function that displays the possible speakers when as users writes each letter
   onChangeSpeakerSearch() {
     controller.text;
     speakersList = [];
@@ -46,8 +46,7 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
     {
       debugPrint('DEBUG' + i);
     }
-  }
-
+  }   /// End of function
     void initState() {
       controller.addListener(() {
         //print(controller.text); // DEBUG
@@ -66,6 +65,9 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
       return new Scaffold(
         backgroundColor: colorPallete[900],
           body:
+          SingleChildScrollView(
+          child: Stack(
+            children: <Widget> [
               new Column(
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
@@ -103,7 +105,7 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
 //                        ]
 //                )
                 ),
-              ]));
+              ])])));
     }
 }
 

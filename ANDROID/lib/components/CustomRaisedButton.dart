@@ -56,3 +56,34 @@ class SimpleFlatButton extends FlatButton
             ));
 }
 
+/// LOGO + return to previous screen arrow
+class SpearchLogo extends Container
+{
+  @override
+  Widget build(BuildContext context) =>Container(
+    padding: EdgeInsets.all( MediaQuery.of(context).size.width * 0.006),
+
+    child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+children: <Widget> [
+  Material(
+      child: InkWell(
+        onTap: () { Navigator.pop(context);},
+        child: Container(
+          color: colorPallete[900],
+            child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
+                width: 50.0, height: 50.0),
+         ),
+      )
+  ),
+
+  new Padding(padding: EdgeInsets.all( 15)),
+  new Image.asset(
+      'assets/images/toplogo_light.png',
+      fit: BoxFit.scaleDown,
+    ),
+
+     ])
+  );
+}
+
