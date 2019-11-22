@@ -150,7 +150,8 @@ class _LoginScreen extends State<LoginScreen> {
             new Container(
                 color: colorPallete[800],
                 child:
-                new TextFormField( obscureText: true,
+                new TextFormField( obscureText: false,
+                  decoration: new InputDecoration(contentPadding: const EdgeInsets.all(16.0)),
                 )            )
             ,
 
@@ -167,6 +168,7 @@ class _LoginScreen extends State<LoginScreen> {
                 color: colorPallete[800],
                 child:
                   new TextFormField( obscureText: true,
+                    decoration: new InputDecoration(contentPadding: const EdgeInsets.all(16.0))
             )            )
             ,
 
