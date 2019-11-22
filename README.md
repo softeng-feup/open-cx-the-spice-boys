@@ -34,6 +34,11 @@
 	 - [ ] Fetch Data
 	 - [ ] Send Data
  - [ ] Connect to Beacons / QR-codes
+ 
+ 
+### Miro
+
+https://miro.com/app/board/o9J_kwfPXrU=/
 
 ### List of Screens to be done in Flutter app.
 
