@@ -97,12 +97,11 @@ class SpearchLogo extends Container
 {
   @override
   Widget build(BuildContext context) =>Container(
-    padding: EdgeInsets.all( MediaQuery.of(context).size.width * 0.006),
+    padding: EdgeInsets.all( MediaQuery.of(context).size.width * 0.01),
 
     child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
 children: <Widget> [
-
 
   new Material(
       child: InkWell(
@@ -123,7 +122,6 @@ children: <Widget> [
       'assets/images/toplogo_light.png',
       fit: BoxFit.scaleDown,
     ),
-
      ])
   );
 }

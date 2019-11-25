@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/MapScreen.dart';
 import 'package:flutter_app_test/OptionsScreen.dart';
 import 'secondScreen.dart';
 import 'HowToUseScreen.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => new LoginScreen(),
         "/main": (context) => new MyHomePage(),
         "/SecondPage": (context) => new SecondScreen(),
+        "/CheckMap": (context) => new MapScreen(),
       },
     );
   }
@@ -54,6 +56,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
+/// Starting Homepage -> After Log in
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -78,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             new SimpleButton( buttonText: "Options" , onPressFunction: buttonPressedOptions),
 
-            new SimpleButton( buttonText: "Check Map", onPressFunction: buttonPressed)
+            new SimpleButton( buttonText: "Check Map", onPressFunction: buttonPressedMap)
 
           ]),
     );
@@ -93,9 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
       context, MaterialPageRoute(builder: (context) => HowToUseScren() ));
   }
 
-  void buttonPressed() {
+  void buttonPressedMap() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SecondScreen()));
+        context, MaterialPageRoute(builder: (context) => MapScreen()));
   }
   void buttonPressedOptions() {
     Navigator.push(
@@ -128,17 +131,16 @@ class _LoginScreen extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
 
-            new Padding( padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.02)),
+            new Padding( padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.01)),
 
             /// logo
             new Container(
-              height: MediaQuery.of(context).size.height * 0.25,
+              height: MediaQuery.of(context).size.height * 0.26,
               child: new Image.asset('assets/images/mainLogo.png', fit: BoxFit.scaleDown),
             ),
           
             new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.05)),
 
-            /// texto
             new Container(
               padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.06 ),
               child:
@@ -146,7 +148,7 @@ class _LoginScreen extends State<LoginScreen> {
                   //textAlign: TextAlign.center,
                   style: subTitleStyle)),
 
-            /// Forms para password e Login.
+            /// Forms to username and password
             new Container(
                 color: colorPallete[800],
                 child:
@@ -171,9 +173,7 @@ class _LoginScreen extends State<LoginScreen> {
                     decoration: new InputDecoration(contentPadding: const EdgeInsets.all(16.0))
             )            )
             ,
-
             new Padding(padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.0125)),
-
             new SimpleButton(buttonText: "Login", onPressFunction: logInAttempt),    //TODO define log in function
 
 

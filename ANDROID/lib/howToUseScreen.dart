@@ -8,6 +8,8 @@ class HowToUseScren extends StatefulWidget {
   _HowToUseScreen createState() => new _HowToUseScreen();
 }
 
+
+/// Creates a Simple view explaning how to use the app
 class _HowToUseScreen extends State<HowToUseScren> {
   @override
   Widget build(BuildContext context) {
@@ -17,9 +19,32 @@ class _HowToUseScreen extends State<HowToUseScren> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-          new Image.asset( 'assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
 
-             // new SimpleFlatButton( onPressFunction: null, buttonText: "How to use"),
+              /// Logo + Exit Arrow
+              new Container(
+                  padding: EdgeInsets.all( MediaQuery.of(context).size.width * 0.01),
+                  child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget> [
+                        new Material(
+                            child: InkWell(
+                              onTap: () { Navigator.pop(context);},
+                              child: Container(
+                                padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03 ),
+//                                color: colorPallete[900],
+                                child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
+                                    width: (MediaQuery.of(context).size.height * 0.05), height: (MediaQuery.of(context).size.height* 0.05)),
+                              ),
+                            )
+                        ),
+                        new Padding(padding: EdgeInsets.all( 15)),
+                        new Image.asset(
+                          'assets/images/toplogo.png',
+                          fit: BoxFit.scaleDown,
+                        ),
+                      ])
+              ),
+
               new Text("How to use",
                   textAlign: TextAlign.center,
                   style: new TextStyle(
@@ -29,6 +54,7 @@ class _HowToUseScreen extends State<HowToUseScren> {
                 fontFamily: FONTFAMILY,
               )),
 
+            /// Explanation
             new Container(margin:
             const EdgeInsets.all(10.0),
             color: colorPallete[700],
