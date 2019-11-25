@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Map<int, Color> colorPallete = {
+const Map<int, Color> colorPallete = {
   50: Color.fromRGBO(36, 52, 112, .1),
   100: Color.fromRGBO(36, 52, 112, .2),
   200: Color.fromRGBO(36, 52, 112, .3),
@@ -18,11 +18,19 @@ Map<int, Color> colorPallete = {
 const String FONTFAMILY = "Roboto";
 
 final TextStyle subTitleStyle =  TextStyle(
-      fontSize: 24,
+      fontSize: 22,
       color: colorPallete[800], 
       fontWeight: FontWeight.w400,
       fontFamily: FONTFAMILY,
       );
-  
+
+final TextStyle infoTitleStyle =  TextStyle(
+  fontSize: 24,
+  backgroundColor: colorPallete[800],
+  color: colorPallete[600],
+  fontWeight: FontWeight.w400,
+  fontFamily: FONTFAMILY,
+);
+
 
 

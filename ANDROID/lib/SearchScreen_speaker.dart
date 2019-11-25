@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/MapScreen.dart';
+import 'package:flutter_app_test/UserPage.dart';
 import 'package:flutter_app_test/components/constants.dart';
 import 'components/CustomRaisedButton.dart';
 
 
-
-var speakers_name = ["Joao", "Gustavo", "Ademar", "Jorge","Tyler Harrison",
+var speakersName = ["Joao", "Gustavo", "Ademar", "Jorge","Tyler Harrison",
   "Frances Payne",
   "Rogelio Gibbs",
   "Chelsea Garza",
@@ -18,6 +19,8 @@ List speakersList = [];
 String spl = "";
 
 List<Widget> listOfUsers = [ Text('test')];
+
+const thisblue = Color(0xFF243470);
 
 
 class SearchScreen_speaker extends StatefulWidget {
@@ -33,7 +36,7 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
   onChangeSpeakerSearch() {
     controller.text;
     speakersList = [];
-    for(final speaker in speakers_name)
+    for(final speaker in speakersName)
       {
       //TODO create a way to display the names where user can tap on a name to check info about the speaker.
           if (speaker.toUpperCase().contains(controller.text.toUpperCase())) {
@@ -73,37 +76,50 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                new Image.asset( 'assets/images/toplogo_light.png',
-                    height: MediaQuery.of(context).size.height * 0.20, ),
+                new SpearchLogo(),
 
                 new Text(
                     "Spreach your Speaker",
                     textAlign: TextAlign.center,
                     style: subTitleStyle,),
 
-                new TextField(
+                new Container(
+                  padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.025),
+                    height: MediaQuery.of(context).size.height * 0.1,
+                  child:
+                  TextField(
                   autofocus: true,
                   controller: controller,
                   style: subTitleStyle,
-                ),
+                )),
 
-                new Container(
+                  new Container(
                   margin: const EdgeInsets.all(10.0),
                   color: colorPallete[800],
                   width: MediaQuery.of(context).size.width * 0.90,
-            //      height: MediaQuery.of(context).size.height * 0.60,
+                  height: MediaQuery.of(context).size.height * 0.67,
                   child:
-                    new Text(
-                      '${speakersList}'
-                    )
-//                  new ListView(
-//                      padding: const EdgeInsets.all(8),
-//                      children: <Widget>[
-//
-//                        listOfUsers,
-//                          // insert widgets here.
-//                        ]
-//                )
+                  ListView.separated(
+                    separatorBuilder: (BuildContext context, int index) => const Divider(
+                      thickness: 3,
+                      color: thisblue,
+                    ),
+                    // Let the ListView know how many items it needs to build.
+                    itemCount: speakersList.length,
+                    itemBuilder: (context, index) {
+                      final item = speakersList[index];
+                        return ListTile(
+                          leading:
+                          CircleAvatar(
+                          backgroundImage: NetworkImage("https://sigarra.up.pt/feup/en/FOTOGRAFIAS_SERVICE.foto?pct_cod=231081"),),
+                          title: Text(item,style: infoTitleStyle,),
+                          onTap: () {
+                            Navigator.push(
+                                context, MaterialPageRoute(builder: (context) => UserPage()));
+                            new MapScreen();},
+                        );
+                    },
+                  ),
                 ),
               ])])));
     }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_app_test/components/CustomRaisedButton.dart';
 import 'components/constants.dart';
 import 'package:photo_view/photo_view.dart';
@@ -38,7 +39,11 @@ class _MapScreen extends State<MapScreen> {
                   height: MediaQuery.of(context).size.height * 0.8,
                   child: PhotoView(
                         imageProvider: AssetImage("assets/images/feupMAP.png"),
-                        initialScale: PhotoViewComputedScale.contained * 0.8)
+                        minScale: PhotoViewComputedScale.contained * 0.6,
+                        initialScale: PhotoViewComputedScale.contained,
+//                        maxScale: PhotoViewComputedScale.covered * 2.5,
+                        enableRotation: true,
+                        )
 
               )
               ])
