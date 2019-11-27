@@ -29,10 +29,8 @@ class _MapScreen extends State<MapScreen> {
               children: <Widget>[
                 new Container(
                   height: MediaQuery.of(context).size.height * 0.15,
-
                   child:
-
-              new SpearchLogo() ),
+                      new SpearchLogo() ),
 
               new Container(
                   width: MediaQuery.of(context).size.width ,
@@ -41,8 +39,8 @@ class _MapScreen extends State<MapScreen> {
                         imageProvider: AssetImage("assets/images/feupMAP.png"),
                         minScale: PhotoViewComputedScale.contained * 0.6,
                         initialScale: PhotoViewComputedScale.contained,
-//                        maxScale: PhotoViewComputedScale.covered * 2.5,
-                        enableRotation: true,
+                        maxScale: PhotoViewComputedScale.covered * 2.5,
+                        enableRotation: false,
                         )
 
               )

@@ -4,6 +4,7 @@ import 'package:flutter_app_test/OptionsScreen.dart';
 import 'secondScreen.dart';
 import 'HowToUseScreen.dart';
 import 'OptionsScreen.dart';
+import 'package:flutter/cupertino.dart';
 import 'SearchScreen.dart';
 import 'components/CustomRaisedButton.dart';
 
@@ -67,16 +68,29 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            new SpearchLogo(),
 
-            new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.05)),
+            new Container(
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0,0 ,0) ,
+                child:
+                new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  new Padding(padding: EdgeInsets.symmetric(vertical:MediaQuery.of(context).size.height * 0.004 )),
+                      new Image.asset('assets/images/toplogo_light.png',
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.topCenter,
+                      ),
+                      ])),
+            new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.03)),
 
             new SimpleFlatButton(buttonText: "How to use?", onPressFunction: buttonPressedHowToUse),
 
             new SimpleButton( buttonText: "Search",onPressFunction: buttonPressedSearch),
 
             new Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.05),
             ),
 
             new SimpleButton( buttonText: "Options" , onPressFunction: buttonPressedOptions),
@@ -88,25 +102,31 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   /// Functions implementation
   void buttonPressedSearch(){
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SearchScreen()));
-  }
-  void buttonPressedHowToUse() {
-  Navigator.push(
-      context, MaterialPageRoute(builder: (context) => HowToUseScren() ));
-  }
+      Navigator.of(context).push(
+          CupertinoPageRoute<Null>(builder: (BuildContext context) {
+            return new SearchScreen();
+          }));
+    }
 
+  void buttonPressedHowToUse() {
+    Navigator.of(context).push(
+        CupertinoPageRoute<Null>(builder: (BuildContext context) {
+          return new HowToUseScren();
+        }));
+  }
   void buttonPressedMap() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => MapScreen()));
+    Navigator.of(context).push(
+        CupertinoPageRoute<Null>(builder: (BuildContext context) {
+          return new MapScreen();
+        }));
   }
   void buttonPressedOptions() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => OptionsScreen()));
+    Navigator.of(context).push(
+        CupertinoPageRoute<Null>(builder: (BuildContext context) {
+          return new OptionsScreen();
+        }));
   }
 }
-
-
 
 
 /// LOGIN-screen
@@ -182,6 +202,7 @@ class _LoginScreen extends State<LoginScreen> {
     }
   /// Functions implementation
   void logInAttempt() {
-        Navigator.pushNamed(context, '/main');
+        Navigator.pushReplacementNamed(context, '/main');
+//        Navigator.pushNamed(context, '/main');
   }
 }
