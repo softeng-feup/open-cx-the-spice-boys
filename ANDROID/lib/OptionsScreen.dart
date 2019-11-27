@@ -8,12 +8,15 @@ class OptionsScreen extends StatefulWidget {
   _OptionsScreen createState() => new _OptionsScreen();
 }
 
+
 class _OptionsScreen extends State<OptionsScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: colorPallete[900],
-        body: new Column(
+        body: SingleChildScrollView(
+        child:
+        new Column(
 
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
@@ -27,35 +30,53 @@ class _OptionsScreen extends State<OptionsScreen> {
                   buttonText: "Options", onPressFunction: null),
 
               new VisibilityButton()
-            ]));
+            ])));
   }
 }
 
 
 /// Visibily for button
-class VisibilityButton extends StatelessWidget {
+class VisibilityButton extends StatefulWidget {
+  @override
+  _VisibilityButton createState() => _VisibilityButton();
+}
+
+class _VisibilityButton extends State<VisibilityButton>
+{
+  bool pressAttention = false;
   @override
   Widget build(BuildContext context) {
+
     // The GestureDetector wraps the button.
     return GestureDetector(
       onTap: () {
-        final snackBar = SnackBar(content: Text("Tap"));
-
-        Scaffold.of(context).showSnackBar(snackBar);
-
+      //  setState( ()  )       // not used might remove later
       },
       // The custom button
-      child: Container(
-        padding: EdgeInsets.all(12.0),
-        decoration: BoxDecoration(
-          color: Theme.of(context).buttonColor,
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Text('Toogle Visibility'),
-      ),
-    );
-  }
+          child: Container(
+//         margin: const EdgeInsets.only(left: 30.0, right: 30.0),
+          margin: const EdgeInsets.symmetric(vertical: 9.0, horizontal: 30),
+          height: MediaQuery.of(context).size.height *0.095,
+          width: MediaQuery.of(context).size.width *0.86,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: pressAttention ? colorPallete[100]: colorPallete[200], //                   <--- border color
+              width: MediaQuery.of(context).size.height *0.01,
+            ),
+          ),
+          child:
+          new RaisedButton(
+                key: null,
+                color: const Color(0xFFe0e0e0),
+                onPressed: () => setState(() => pressAttention = !pressAttention),
+                child: new Text(
+                'Toggle Visibility',
+                style: new TextStyle(
+                        fontSize: 32.0,
+                        color: const Color(0xFF000000),
+                        fontWeight: FontWeight.w700,
+                        fontFamily: FONTFAMILY),
+                        ))));
+              }
 }
 
-
-// https://api.flutter.dev/flutter/material/ToggleButtons-class.html

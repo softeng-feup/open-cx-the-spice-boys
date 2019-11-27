@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 const Map<int, Color> colorPallete = {
   50: Color.fromRGBO(36, 52, 112, .1),
-  100: Color.fromRGBO(36, 52, 112, .2),
-  200: Color.fromRGBO(36, 52, 112, .3),
+  100: Color.fromRGBO(255, 0, 0, 1),    // red
+  200: Color.fromRGBO(0, 255, 32, 1),   //green
   300: Color.fromRGBO(36, 52, 112, .4),
   400: Color.fromRGBO(36, 52, 112, .5),
   500: Color.fromRGBO(36, 52, 112, .6),
