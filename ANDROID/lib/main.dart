@@ -62,28 +62,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: colorPallete[900],
-      body:  new Column(
+        backgroundColor: colorPallete[900],
+        body:  SingleChildScrollView(
+        child: Stack(
+        children: <Widget>[
+        new Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
 
-            new Container(
-                padding: EdgeInsetsDirectional.fromSTEB(18, 0,0 ,0) ,
-                child:
-                new Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  new Padding(padding: EdgeInsets.symmetric(vertical:MediaQuery.of(context).size.height * 0.004 )),
-                      new Image.asset('assets/images/toplogo_light.png',
-                        fit: BoxFit.scaleDown,
-                        alignment: Alignment.topCenter,
-                      ),
-                      ])),
-            new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.03)),
+            new SpearchLogoNoBack(),
+
+            new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
+
 
             new SimpleFlatButton(buttonText: "How to use?", onPressFunction: buttonPressedHowToUse),
 
@@ -97,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             new SimpleButton( buttonText: "Check Map", onPressFunction: buttonPressedMap)
 
-          ]),
+          ])])),
     );
   }
   /// Functions implementation

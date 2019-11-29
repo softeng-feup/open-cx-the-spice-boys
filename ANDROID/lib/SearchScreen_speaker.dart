@@ -78,10 +78,11 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
               children: <Widget>[
                 new SpearchLogo(),
 
-                new Text(
-                    "Spreach your Speaker",
-                    textAlign: TextAlign.center,
-                    style: subTitleStyle,),
+new SimpleFlatButton(buttonText: "Spreach your Speaker", onPressFunction: null),
+//                new Text(
+//                    "Spreach your Speaker",
+//                    textAlign: TextAlign.center,
+//                    style: subTitleStyle,),
 
                 new Container(
                   padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.025),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app_test/components/CustomRaisedButton.dart';
 import 'components/constants.dart';
+import 'dart:io';
 
 class OptionsScreen extends StatefulWidget {
   OptionsScreen({Key key}) : super(key: key);
@@ -22,15 +24,26 @@ class _OptionsScreen extends State<OptionsScreen> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              new Image.asset(
-                'assets/images/toplogo_light.png',
-                fit: BoxFit.scaleDown,
-              ),
+              new SpearchLogo(),
+              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.03)),
+
               new SimpleFlatButton(
                   buttonText: "Options", onPressFunction: null),
 
-              new VisibilityButton()
+              new VisibilityButton(),
+              new Padding(
+                padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.05),
+              ),
+              new SimpleButton(buttonText: "Log off", onPressFunction: () => exitapp),
+
             ])));
+  }
+  void exitapp()
+  {
+    exit(0);
+    SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+    //SystemNavigator.pop();
+//    SystemChannels.platform.invokeMethod('SystemNavigator.pop');
   }
 }
 
@@ -72,7 +85,7 @@ class _VisibilityButton extends State<VisibilityButton>
                 child: new Text(
                 'Toggle Visibility',
                 style: new TextStyle(
-                        fontSize: 32.0,
+                        fontSize: 28.0,
                         color: const Color(0xFF000000),
                         fontWeight: FontWeight.w700,
                         fontFamily: FONTFAMILY),

@@ -16,18 +16,24 @@ class _SearchScreen extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: colorPallete[900],
-        body: new Column(
+        body:
+        SingleChildScrollView(
+        child: Stack(
+        children: <Widget> [
+        new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
 
               new SpearchLogo(),
+              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
 
-              new Text(
-                  "Peers",
-                  textAlign: TextAlign.center,
-                  style: subTitleStyle),
+              new SimpleFlatButton(buttonText: "Peers", onPressFunction: null),
+//              new Text(
+//                  "Peers",
+//                  textAlign: TextAlign.center,
+//                  style: subTitleStyle),
 
               new SimpleButton(
                   onPressFunction: null, buttonText: "Search your Peers"),
@@ -38,16 +44,17 @@ class _SearchScreen extends State<SearchScreen> {
                 padding: const EdgeInsets.all(24.0),
               ),
 
-              new Text(
-                  "Event",
-                  textAlign: TextAlign.center,
-                  style: subTitleStyle),
+              new SimpleFlatButton(buttonText: "Events", onPressFunction: null),
+//              new Text(
+//                  "Event",
+//                  textAlign: TextAlign.center,
+//                  style: subTitleStyle),
 
               new SimpleButton(
                   onPressFunction: goToSearchSpeaker, buttonText: "Speaker"),
               new SimpleButton(onPressFunction: goToEventName, buttonText: "Event Name"),
 
-            ]));
+            ])])));
   }
 
   void goToEventName()

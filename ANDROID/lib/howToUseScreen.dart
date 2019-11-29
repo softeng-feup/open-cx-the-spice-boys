@@ -23,7 +23,9 @@ class _HowToUseScreen extends State<HowToUseScren> {
               /// Logo + Exit Arrow
               new Container(
                   padding: EdgeInsets.all( MediaQuery.of(context).size.width * 0.01),
-                  child: Row(
+                  child:
+                  new SafeArea(child:
+                  new Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget> [
                         new Material(
@@ -42,19 +44,25 @@ class _HowToUseScreen extends State<HowToUseScren> {
                           'assets/images/toplogo.png',
                           fit: BoxFit.scaleDown,
                         ),
-                      ])
+                      ]))
               ),
+              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
 
-              new Text("How to use",
-                  textAlign: TextAlign.center,
-                  style: new TextStyle(
-                fontSize: 24,
-                color: colorPallete[600],
-                fontWeight: FontWeight.w400,
-                fontFamily: FONTFAMILY,
-              )),
+    new RaisedButton(
+    key: null,
+    onPressed: null,    //Todo
+    child: new Text(
+    "How to use",
+    style: new TextStyle(
+    fontSize: 19.0,
+    color: const Color(0xFF000000),
+    fontWeight: FontWeight.w800,
+    fontFamily: FONTFAMILY),
+    )),
 
-            /// Explanation
+              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
+
+              /// Explanation
             new Container(margin:
             const EdgeInsets.all(10.0),
             color: colorPallete[700],

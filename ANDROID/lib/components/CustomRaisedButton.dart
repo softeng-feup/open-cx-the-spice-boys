@@ -56,7 +56,7 @@ class SimpleButton extends Container
                     child: new Text(
                       buttonText,
                       style: new TextStyle(
-                          fontSize: 32.0,
+                          fontSize: 28.0,
                           color: const Color(0xFF000000),
                           fontWeight: FontWeight.w700,
                           fontFamily: FONTFAMILY),
@@ -85,7 +85,7 @@ class SimpleFlatButton extends FlatButton
       child: new Text(
             buttonText,
             style: new TextStyle(
-                fontSize: 20.0,
+                fontSize: 19.0,
                 color: const Color(0xFFFFFFFF),
                 fontWeight: FontWeight.w400,
                 fontFamily: FONTFAMILY),
@@ -99,30 +99,62 @@ class SpearchLogo extends Container
   Widget build(BuildContext context) =>Container(
     padding: EdgeInsets.all( MediaQuery.of(context).size.width * 0.01),
 
-    child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-children: <Widget> [
+    child:
 
-  new Material(
-      child: InkWell(
-        onTap: () { Navigator.pop(context);},
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03 ),
-          color: colorPallete[900],
-            child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
-                width: (MediaQuery.of(context).size.height * 0.05), height: (MediaQuery.of(context).size.height* 0.05)),
-         ),
-      )
-  ),
+    new SafeArea(child:
+          new Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget> [
 
-  new Padding(padding: EdgeInsets.all( 15)),
+        new InkWell(
+              onTap: () { Navigator.pop(context);},
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03 ),
+                color: colorPallete[900],
+                  child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
+                      width: (MediaQuery.of(context).size.height * 0.05), height: (MediaQuery.of(context).size.height* 0.05)),
+               ),
+        ),
 
+        new Padding(padding: EdgeInsets.all( 15)),
 
-  new Image.asset(
-      'assets/images/toplogo_light.png',
-      fit: BoxFit.scaleDown,
-    ),
-     ])
-  );
+        new Image.asset(
+            'assets/images/toplogo_light.png',
+            fit: BoxFit.scaleDown,
+          ),
+           ])
+        ));
 }
 
+class SpearchLogoNoBack extends Container
+{
+  @override
+  Widget build(BuildContext context) =>Container(
+      padding: EdgeInsets.all( MediaQuery.of(context).size.width * 0.01),
+
+      child:
+      new SafeArea(child:
+      new Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget> [
+
+                  new Container(
+                    padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03 ),
+                    color: colorPallete[900],
+                    child:
+
+                    Image.asset('assets/images/placeholder.png',fit: BoxFit.scaleDown,
+                        width: (MediaQuery.of(context).size.height * 0.05),
+                        height: (MediaQuery.of(context).size.height* 0.05),
+                        ),
+            ),
+
+            new Padding(padding: EdgeInsets.all( 15)),
+
+            new Image.asset(
+              'assets/images/toplogo_light.png',
+              fit: BoxFit.scaleDown,
+            ),
+          ])
+  ));
+}
