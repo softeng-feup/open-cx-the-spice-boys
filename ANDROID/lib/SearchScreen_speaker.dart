@@ -77,6 +77,7 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 new SpearchLogo(),
+                new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
 
 new SimpleFlatButton(buttonText: "Spreach your Speaker", onPressFunction: null),
 //                new Text(
@@ -97,8 +98,9 @@ new SimpleFlatButton(buttonText: "Spreach your Speaker", onPressFunction: null),
                   new Container(
                   margin: const EdgeInsets.all(10.0),
                   color: colorPallete[800],
+                  alignment: Alignment.topCenter,
                   width: MediaQuery.of(context).size.width * 0.90,
-                  height: MediaQuery.of(context).size.height * 0.67,
+                  height: MediaQuery.of(context).size.height * 0.58,
                   child:
                   ListView.separated(
                     separatorBuilder: (BuildContext context, int index) => const Divider(

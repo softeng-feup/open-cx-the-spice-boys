@@ -25,7 +25,7 @@ class _OptionsScreen extends State<OptionsScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               new SpearchLogo(),
-              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.03)),
+              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
 
               new SimpleFlatButton(
                   buttonText: "Options", onPressFunction: null),

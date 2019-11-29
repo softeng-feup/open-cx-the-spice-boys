@@ -3,6 +3,9 @@ import 'package:flutter_app_test/MapScreen.dart';
 import 'package:flutter_app_test/components/CustomRaisedButton.dart';
 import 'package:flutter_app_test/components/constants.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:flutter/cupertino.dart';
+
+
 
 class UserPage extends StatefulWidget {
   UserPage({Key key}) : super(key: key);
@@ -20,40 +23,38 @@ class _UserPage extends State<UserPage> {
         body: SingleChildScrollView(
         child: Stack(
         children: <Widget>[
-        new Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
+        new SafeArea(child:
+            new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
 
+                  new Row(
+              children: <Widget>[
+                      new InkWell(
+                        onTap: () { Navigator.pop(context);},
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03),
+                          alignment: Alignment.topLeft,
+                          color: colorPallete[900],
+                          child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
+                              width: (MediaQuery.of(context).size.height * 0.05), height: (MediaQuery.of(context).size.height* 0.05)),
+                        ),
+                  ),
 
-              new Material(
-                  child: InkWell(
-                    onTap: () { Navigator.pop(context);},
-                    child: Container(
-                      padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03),
-                      alignment: Alignment.topLeft,
-                      color: colorPallete[900],
-                      child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
-                          width: (MediaQuery.of(context).size.height * 0.05), height: (MediaQuery.of(context).size.height* 0.05)),
-                    ),
-                  )
-              ),
-
+              new AddToContacts()
+              ]),
 
               //TODO -> Add a button to "Add to Contacts here"
 
-
-
-              new Padding(padding:  EdgeInsets.all(MediaQuery.of(context).size.width*0.01)),
-
-
-              new Text(
-                  "User1",
-                  textAlign: TextAlign.center,
-                  style: subTitleStyle),
-
-              new Padding(padding:  EdgeInsets.all(MediaQuery.of(context).size.width*0.01)),
+//              new Padding(padding:  EdgeInsets.all(MediaQuery.of(context).size.width*0.01)),
+//
+//
+//                  new Text(
+//                      "User1",
+//                      textAlign: TextAlign.center,
+//                      style: subTitleStyle),
 
 
               new Container(
@@ -92,31 +93,32 @@ class _UserPage extends State<UserPage> {
                        padding: EdgeInsets.all(3),
                        width: MediaQuery.of(context).size.width*0.8,
                        child:
-                     new Text("Full sName:",style: infoTitleStyle),
+                     new Text("[PLACEHOLDER]:",style: infoTitleStyle),
                      )
 ,
                      new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
 
-                     new Text("Full Name:",style: subTitleStyle),
+                     new Text("Company:",style: subTitleStyle),
                          new Container(
                            color: colorPallete[800],
                            padding: EdgeInsets.all(3),
                            width: MediaQuery.of(context).size.width*0.8,
                            child:
-                           new Text("Full sName:",style: infoTitleStyle),
+                           new Text("[PLACEHOLDER]",style: infoTitleStyle),
                          )
                    ],
                  )]),
               ),
 
-
               new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.04)),
 
+              new SimpleButton(
+                buttonText: "Show on Map",
+                onPressFunction: goToSearchSpeaker
+                ),
 
-              new SimpleButton( onPressFunction: null, buttonText: "Show on Map"),
 
-
-            ])])));
+            ]))])));
   }
 
 
@@ -124,5 +126,57 @@ class _UserPage extends State<UserPage> {
   {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => MapScreen()));
+  }
+}
+
+
+  /// Add to Contacts button
+class AddToContacts extends StatefulWidget {
+  @override
+  _AddToContacts createState() => _AddToContacts();
+}
+
+class _AddToContacts extends State<AddToContacts>
+{
+  bool pressAttention = false;
+  @override
+  Widget build(BuildContext context) {
+
+    // The GestureDetector wraps the button.
+   return Container(
+      width: MediaQuery.of(context).size.width*0.88,
+      child:
+     GestureDetector(
+        onTap: () {
+          //  setState( ()  )       // not used might remove later
+        },
+        // The custom button
+        child:
+        Align(
+          alignment: Alignment.topRight,
+          child:
+        new Container(
+            margin: const EdgeInsets.symmetric(vertical: 9.0,),
+            height: MediaQuery.of(context).size.height *0.063,
+            width: MediaQuery.of(context).size.width *0.48,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: pressAttention ? colorPallete[100]: colorPallete[200], //                   <--- border color
+                width: MediaQuery.of(context).size.height *0.009,
+              ),
+            ),
+            child:
+            new RaisedButton(
+                key: null,
+                color: const Color(0xFFe0e0e0),
+                onPressed: () => setState(() => pressAttention = !pressAttention),
+                child: new Text(
+                  'Add To Contacts',
+                  style: new TextStyle(
+                      fontSize: 18.0,
+                      color: const Color(0xFF000000),
+                      fontWeight: FontWeight.w700,
+                      fontFamily: FONTFAMILY),
+                ))))));
   }
 }

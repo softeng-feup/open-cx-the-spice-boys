@@ -137,13 +137,13 @@ class _LoginScreen extends State<LoginScreen> {
       body:  SingleChildScrollView(
         child: Stack(
           children: <Widget>[
-      new Column(
+        new SafeArea(child:
+
+        new Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-
-            new Padding( padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.01)),
 
             /// logo
             new Container(
@@ -189,7 +189,7 @@ class _LoginScreen extends State<LoginScreen> {
             new SimpleButton(buttonText: "Login", onPressFunction: logInAttempt),    //TODO define log in function
 
 
-          ])],
+          ]))],
         )));
     }
   /// Functions implementation
