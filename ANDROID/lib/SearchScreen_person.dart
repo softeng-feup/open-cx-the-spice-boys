@@ -8,27 +8,27 @@ import 'package:geolocator/geolocator.dart';
 import 'package:flutter_app_test/users.dart';
 
 
-class SecondScreen extends StatefulWidget {
+class SearchScreen_person extends StatefulWidget {
 
-  SecondScreen({Key key}) : super(key: key);
+  SearchScreen_person({Key key}) : super(key: key);
   @override
-  _SecondScreen createState() => new _SecondScreen();
+  _SearchScreen_person createState() => new _SearchScreen_person();
 
 }
 
 
 
-class _SecondScreen extends State<SecondScreen> {
+class _SearchScreen_person extends State<SearchScreen_person> {
 
   static var geolocator = Geolocator();
   static var locationOptions = LocationOptions(accuracy: LocationAccuracy.best, distanceFilter: 1);
-
+  static var user_pos = [];
 
   StreamSubscription<Position> positionStream = geolocator.getPositionStream(
       locationOptions).listen(
-          (Position position) => print(
-          position == null ? 'Unknown' : position.latitude.toString() + ', ' +
-              position.longitude.toString()));
+          (Position position) => {user_pos.add(position.latitude),
+        user_pos.add(position.longitude)});
+
   static Future<Position> position = geolocator.getCurrentPosition();
   Completer<GoogleMapController> _controller = Completer();
   CameraPosition user = CameraPosition(target: LatLng(feup_loc.elementAt(0), feup_loc.elementAt(1)), zoom: 17);
@@ -62,10 +62,13 @@ class _SecondScreen extends State<SecondScreen> {
   }
 
 
+  void addPosition(Position position){
+    user_pos.add(position.latitude);
+    user_pos.add(position.longitude);
+  }
 }
 
 
 Position getposition(){
   Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high) as Position;
 }
-

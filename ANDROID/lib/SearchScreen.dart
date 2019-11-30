@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/SearchScreen_Speaker.dart';
+import 'package:flutter_app_test/components/constants.dart';
+import 'package:flutter_app_test/SearchScreen_person.dart';
+import 'components/CustomRaisedButton.dart';
+
 
 class SearchScreen extends StatefulWidget {
   SearchScreen({Key key}) : super(key: key);
@@ -10,52 +15,49 @@ class _SearchScreen extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: colorPallete[900], 
         body: new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              new Image.asset(
-                'assets/images/toplogo_light.png',
-                fit: BoxFit.scaleDown,
+
+              new Image.asset( 'assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
+              
+              new Text(
+                  "Peers",
+                  textAlign: TextAlign.center,
+                  style: subTitleStyle),
+
+              new SimpleButton( onPressFunction: goToSearchPerson, buttonText: "Search your Peers"),
+              new SimpleButton( onPressFunction: null, buttonText: "Contact List"),
+
+              new Padding(
+                padding: const EdgeInsets.all(24.0),
               ),
+ 
+              new Text(
+                  "Event",
+                  textAlign: TextAlign.center,
+                  style: subTitleStyle),
 
-        // THIS IS A WEIRD WAY TO MAINTAIN STYLING
-        new FlatButton(
-            key: null,
-            onPressed: null,
-            child: new Text(
-              "", style: new TextStyle(
-                  color: const Color(0xFF000000),
-                  fontFamily: "Roboto"),
-            )),
+              new SimpleButton( onPressFunction: goToSearchSpeaker, buttonText: "Speaker"),
+              new SimpleButton( onPressFunction: null, buttonText: "Event Name"),
 
-            new RaisedButton(
-                  key: null,
-                  onPressed: null,    //Todo
-                  color: const Color(0xFFe0e0e0),
-                  child: new Text(
-                    "People",
-                    style: new TextStyle(
-                        fontSize: 12.0,
-                        color: const Color(0xFF000000),
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "Roboto"),
-                  )),
-            new RaisedButton(
-                key: null,
-                onPressed: null,    //Todo
-                color: const Color(0xFFe0e0e0),
-                child: new Text(
-                  "Key Spots",
-                  style: new TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Roboto"),
-                )),
-
-
-        ]));
+            ]));
   }
+
+
+  void goToSearchSpeaker()
+  {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => SearchScreen_speaker()));
+  }
+
+
+  void goToSearchPerson(){
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context)=>SearchScreen_person()));
+  }
+
 }
