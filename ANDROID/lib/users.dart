@@ -1,4 +1,4 @@
-var users = [ ["JOAO ANTONIO", 41.0, -8.15],
+var users = [ ["JOAO ANTONIO", 41.1783,-8.5964],
   ["ANTONIO MANUEL", 40.6,-8.19],
   ["Manuel Joao", 41.2, -8.3]
 ];

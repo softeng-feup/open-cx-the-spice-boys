@@ -52,7 +52,7 @@ class _SearchScreen_person extends State<SearchScreen_person> {
     for(final i in userList)  // DEBUG.
         {
       debugPrint('DEBUG' + i[0]);
-      CameraPosition _final_user = CameraPosition(target: LatLng(i[1], i[2]), zoom: 17);
+      CameraPosition _final_user = CameraPosition(target: LatLng(i[1], i[2]), zoom: 20);
       final_user = _final_user;
     }
   }   /// End of function
@@ -78,16 +78,17 @@ class _SearchScreen_person extends State<SearchScreen_person> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
 
-              SizedBox(
-        height: MediaQuery.of(context).size.height*0.15,
-      child:
+
               new TextField(
             autofocus: true,
               controller: controller,
               style: subTitleStyle,
             )
-              )
+
         ,
+              new SimpleButton(buttonText: "search", onPressFunction: goToFriend),
+
+
 
               SizedBox(
                   height:MediaQuery.of(context).size.height*0.5,
@@ -111,6 +112,12 @@ class _SearchScreen_person extends State<SearchScreen_person> {
     user_pos.add(position.latitude);
     user_pos.add(position.longitude);
   }
+
+  Future <void> goToFriend() async{
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(final_user));
+  }
+
 }
 
 
