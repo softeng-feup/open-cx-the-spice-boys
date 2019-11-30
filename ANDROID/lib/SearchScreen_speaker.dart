@@ -23,12 +23,12 @@ List<Widget> listOfUsers = [ Text('test')];
 const thisblue = Color(0xFF243470);
 
 
-class SearchScreen_speaker extends StatefulWidget {
-  SearchScreen_speaker({Key key}) : super(key: key);
+class SearchScreenSpeaker extends StatefulWidget {
+  SearchScreenSpeaker({Key key}) : super(key: key);
   @override
-  _SearchScreen_speaker createState() => new _SearchScreen_speaker();
+  _SearchScreenSpeaker createState() => new _SearchScreenSpeaker();
 }
-class _SearchScreen_speaker extends State<SearchScreen_speaker>
+class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
 {
   final controller = TextEditingController();
 
@@ -79,7 +79,7 @@ class _SearchScreen_speaker extends State<SearchScreen_speaker>
                 new SpearchLogo(),
                 new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
 
-new SimpleFlatButton(buttonText: "Spreach your Speaker", onPressFunction: null),
+              new SimpleFlatButton(buttonText: "Spreach your Speaker", onPressFunction: null),
 //                new Text(
 //                    "Spreach your Speaker",
 //                    textAlign: TextAlign.center,

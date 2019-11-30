@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_test/components/CustomRaisedButton.dart';
 import 'package:flutter_app_test/components/constants.dart';
 
 class HowToUseScren extends StatefulWidget {
