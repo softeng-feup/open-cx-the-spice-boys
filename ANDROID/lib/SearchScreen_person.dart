@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_test/components/CustomRaisedButton.dart';
 import 'package:flutter_app_test/components/constants.dart';
@@ -23,6 +24,7 @@ class _SearchScreen_person extends State<SearchScreen_person> {
   static var geolocator = Geolocator();
   static var locationOptions = LocationOptions(accuracy: LocationAccuracy.best, distanceFilter: 1);
   static var user_pos = [feup_loc.elementAt(0), feup_loc.elementAt(1)];
+  Set<Marker> markers = Set();
 
   StreamSubscription<Position> positionStream = geolocator.getPositionStream(
       locationOptions).listen(
@@ -72,12 +74,7 @@ class _SearchScreen_person extends State<SearchScreen_person> {
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: colorPallete[900],
-        body:  SingleChildScrollView(
-        child: Stack(
-        children: <Widget>[
-        new SafeArea(child:
-
-        new Column(
+        body: new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -104,11 +101,13 @@ class _SearchScreen_person extends State<SearchScreen_person> {
                     onMapCreated: (GoogleMapController controller){
                       _controller.complete(controller);
                     },
+                    markers: markers,
                   )
               )
               // add new Widgets here.
             ])
-    )]))) ;
+    ) ;
+
   }
 
 
@@ -118,8 +117,16 @@ class _SearchScreen_person extends State<SearchScreen_person> {
   }
 
   Future <void> goToFriend() async{
+
     final GoogleMapController controller = await _controller.future;
     controller.animateCamera(CameraUpdate.newCameraPosition(final_user));
+    Marker res = Marker(
+      markerId: MarkerId(final_user.toString()),
+      infoWindow: InfoWindow(
+        title: "Target"),
+      position: final_user.target,
+    );
+  markers.add(res);
   }
 
 }

@@ -1,51 +1,69 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_app_test/components/CustomRaisedButton.dart';
-import 'components/constants.dart';
-import 'package:photo_view/photo_view.dart';
+import 'package:flutter_app_test/components/constants.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:flutter_app_test/users.dart';
+
 
 class MapScreen extends StatefulWidget {
+
   MapScreen({Key key}) : super(key: key);
   @override
   _MapScreen createState() => new _MapScreen();
+
 }
 
 
-/// TODO -> Receive Position parameters: User position + Target position. Possibly refreshing information every 3 - 5 seconds.
-/// TODO -> Add Points in image ( overlap over Map or change the image with some image editor ) for position + target.
 
-/// Map view.
 class _MapScreen extends State<MapScreen> {
-  @override
-    Widget build(BuildContext context) {
-      return new Scaffold(
-          backgroundColor: colorPallete[900],
-          body: SingleChildScrollView(
-              child:
-              new Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                new Container(
-                  height: MediaQuery.of(context).size.height * 0.15,
+
+  static var geolocator = Geolocator();
+  static var locationOptions = LocationOptions(accuracy: LocationAccuracy.best, distanceFilter: 1);
+
+
+  StreamSubscription<Position> positionStream = geolocator.getPositionStream(
+      locationOptions).listen(
+          (Position position) => print(
+          position == null ? 'Unknown' : position.latitude.toString() + ', ' +
+              position.longitude.toString()));
+  static Future<Position> position = geolocator.getCurrentPosition();
+  Completer<GoogleMapController> _controller = Completer();
+  CameraPosition user = CameraPosition(target: LatLng(feup_loc.elementAt(0), feup_loc.elementAt(1)), zoom: 17);
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        backgroundColor: colorPallete[900],
+        body: new Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              new SpearchLogoNoBack(),
+
+              SizedBox(
+                  height:MediaQuery.of(context).size.height*0.5,
                   child:
-                      new SpearchLogo() ),
-
-              new Container(
-                  width: MediaQuery.of(context).size.width ,
-                  height: MediaQuery.of(context).size.height * 0.8,
-                  child: PhotoView(
-                        imageProvider: AssetImage("assets/images/feupMAP.png"),
-                        minScale: PhotoViewComputedScale.contained * 0.6,
-                        initialScale: PhotoViewComputedScale.contained,
-                        maxScale: PhotoViewComputedScale.covered * 2.5,
-                        enableRotation: false,
-                        )
-
+                  GoogleMap(
+                    mapType: MapType.hybrid,
+                    initialCameraPosition: user,
+                    onMapCreated: (GoogleMapController controller){
+                      _controller.complete(controller);
+                    },
+                  )
               )
-              ])
-              ));
+              // add new Widgets here.
+            ])
+    ) ;
+
   }
-//  FUnctions
-  }
+
+
+}
+
+
+Position getposition(){
+  Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high) as Position;
+}
+

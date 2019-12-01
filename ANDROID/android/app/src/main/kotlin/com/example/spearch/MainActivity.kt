@@ -1,4 +1,4 @@
-package com.feup.flutter_app_test
+package com.example.spearch
 
 import android.os.Bundle
 

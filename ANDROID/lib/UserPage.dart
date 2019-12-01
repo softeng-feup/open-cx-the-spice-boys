@@ -21,32 +21,32 @@ class _UserPage extends State<UserPage> {
     return new Scaffold(
         backgroundColor: colorPallete[900],
         body: SingleChildScrollView(
-        child: Stack(
-        children: <Widget>[
-        new SafeArea(child:
-            new Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+            child: Stack(
                 children: <Widget>[
+                  new SafeArea(child:
+                  new Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
 
-                  new Row(
-              children: <Widget>[
-                      new InkWell(
-                        onTap: () { Navigator.pop(context);},
-                        child: Container(
-                          padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03),
-                          alignment: Alignment.topLeft,
-                          color: colorPallete[900],
-                          child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
-                              width: (MediaQuery.of(context).size.height * 0.05), height: (MediaQuery.of(context).size.height* 0.05)),
-                        ),
-                  ),
+                        new Row(
+                            children: <Widget>[
+                              new InkWell(
+                                onTap: () { Navigator.pop(context);},
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03),
+                                  alignment: Alignment.topLeft,
+                                  color: colorPallete[900],
+                                  child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
+                                      width: (MediaQuery.of(context).size.height * 0.05), height: (MediaQuery.of(context).size.height* 0.05)),
+                                ),
+                              ),
 
-              new AddToContacts()
-              ]),
+                              new AddToContacts()
+                            ]),
 
-              //TODO -> Add a button to "Add to Contacts here"
+                        //TODO -> Add a button to "Add to Contacts here"
 
 //              new Padding(padding:  EdgeInsets.all(MediaQuery.of(context).size.width*0.01)),
 //
@@ -57,68 +57,68 @@ class _UserPage extends State<UserPage> {
 //                      style: subTitleStyle),
 
 
-              new Container(
-                  color: colorPallete[700],
-                  width: MediaQuery.of(context).size.width *0.6,
-                  height: MediaQuery.of(context).size.width *0.6,
-                  child:
-                          PhotoView(
-                          imageProvider: NetworkImage("https://sigarra.up.pt/feup/en/FOTOGRAFIAS_SERVICE.foto?pct_cod=231081"),
-                          initialScale: PhotoViewComputedScale.contained,
-                          )
-              ),
+                        new Container(
+                            color: colorPallete[700],
+                            width: MediaQuery.of(context).size.width *0.6,
+                            height: MediaQuery.of(context).size.width *0.6,
+                            child:
+                            PhotoView(
+                              imageProvider: NetworkImage("https://sigarra.up.pt/feup/en/FOTOGRAFIAS_SERVICE.foto?pct_cod=231081"),
+                              initialScale: PhotoViewComputedScale.contained,
+                            )
+                        ),
 
-              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
-
-
-              /// Information Container
-              new Container(
-                padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
-                alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width*0.8,
-
-                child:
-                 new Stack(
-                   children: <Widget>[
-                 new Column(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       mainAxisSize: MainAxisSize.max,
-                       crossAxisAlignment: CrossAxisAlignment.stretch,
-                       children: <Widget>[
-
-                     new Text("Full Name:",
-                     style: subTitleStyle),
-                     new Container(
-                       color: colorPallete[800],
-                       padding: EdgeInsets.all(3),
-                       width: MediaQuery.of(context).size.width*0.8,
-                       child:
-                     new Text("[PLACEHOLDER]:",style: infoTitleStyle),
-                     )
-,
-                     new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
-
-                     new Text("Company:",style: subTitleStyle),
-                         new Container(
-                           color: colorPallete[800],
-                           padding: EdgeInsets.all(3),
-                           width: MediaQuery.of(context).size.width*0.8,
-                           child:
-                           new Text("[PLACEHOLDER]",style: infoTitleStyle),
-                         )
-                   ],
-                 )]),
-              ),
-
-              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.04)),
-
-              new SimpleButton(
-                buttonText: "Show on Map",
-                onPressFunction: goToSearchSpeaker
-                ),
+                        new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
 
 
-            ]))])));
+                        /// Information Container
+                        new Container(
+                          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+                          alignment: Alignment.center,
+                          width: MediaQuery.of(context).size.width*0.8,
+
+                          child:
+                          new Stack(
+                              children: <Widget>[
+                                new Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: <Widget>[
+
+                                    new Text("Full Name:",
+                                        style: subTitleStyle),
+                                    new Container(
+                                      color: colorPallete[800],
+                                      padding: EdgeInsets.all(3),
+                                      width: MediaQuery.of(context).size.width*0.8,
+                                      child:
+                                      new Text("[PLACEHOLDER]:",style: infoTitleStyle),
+                                    )
+                                    ,
+                                    new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
+
+                                    new Text("Company:",style: subTitleStyle),
+                                    new Container(
+                                      color: colorPallete[800],
+                                      padding: EdgeInsets.all(3),
+                                      width: MediaQuery.of(context).size.width*0.8,
+                                      child:
+                                      new Text("[PLACEHOLDER]",style: infoTitleStyle),
+                                    )
+                                  ],
+                                )]),
+                        ),
+
+                        new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.04)),
+
+                        new SimpleButton(
+                            buttonText: "Show on Map",
+                            onPressFunction: goToSearchSpeaker
+                        ),
+
+
+                      ]))])));
   }
 
 
@@ -130,7 +130,7 @@ class _UserPage extends State<UserPage> {
 }
 
 
-  /// Add to Contacts button
+/// Add to Contacts button
 class AddToContacts extends StatefulWidget {
   @override
   _AddToContacts createState() => _AddToContacts();
@@ -143,40 +143,40 @@ class _AddToContacts extends State<AddToContacts>
   Widget build(BuildContext context) {
 
     // The GestureDetector wraps the button.
-   return Container(
-      width: MediaQuery.of(context).size.width*0.88,
-      child:
-     GestureDetector(
-        onTap: () {
-          //  setState( ()  )       // not used might remove later
-        },
-        // The custom button
+    return Container(
+        width: MediaQuery.of(context).size.width*0.88,
         child:
-        Align(
-          alignment: Alignment.topRight,
-          child:
-        new Container(
-            margin: const EdgeInsets.symmetric(vertical: 9.0,),
-            height: MediaQuery.of(context).size.height *0.063,
-            width: MediaQuery.of(context).size.width *0.48,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: pressAttention ? colorPallete[100]: colorPallete[200], //                   <--- border color
-                width: MediaQuery.of(context).size.height *0.009,
-              ),
-            ),
+        GestureDetector(
+            onTap: () {
+              //  setState( ()  )       // not used might remove later
+            },
+            // The custom button
             child:
-            new RaisedButton(
-                key: null,
-                color: const Color(0xFFe0e0e0),
-                onPressed: () => setState(() => pressAttention = !pressAttention),
-                child: new Text(
-                  'Add To Contacts',
-                  style: new TextStyle(
-                      fontSize: 18.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w700,
-                      fontFamily: FONTFAMILY),
-                ))))));
+            Align(
+                alignment: Alignment.topRight,
+                child:
+                new Container(
+                    margin: const EdgeInsets.symmetric(vertical: 9.0,),
+                    height: MediaQuery.of(context).size.height *0.063,
+                    width: MediaQuery.of(context).size.width *0.48,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: pressAttention ? colorPallete[100]: colorPallete[200], //                   <--- border color
+                        width: MediaQuery.of(context).size.height *0.009,
+                      ),
+                    ),
+                    child:
+                    new RaisedButton(
+                        key: null,
+                        color: const Color(0xFFe0e0e0),
+                        onPressed: () => setState(() => pressAttention = !pressAttention),
+                        child: new Text(
+                          'Add To Contacts',
+                          style: new TextStyle(
+                              fontSize: 18.0,
+                              color: const Color(0xFF000000),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: FONTFAMILY),
+                        ))))));
   }
 }
