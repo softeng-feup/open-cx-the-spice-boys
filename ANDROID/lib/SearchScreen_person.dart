@@ -74,7 +74,12 @@ class _SearchScreen_person extends State<SearchScreen_person> {
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: colorPallete[900],
-        body: new Column(
+        body:  SingleChildScrollView(
+        child: Stack(
+        children: <Widget>[
+        new SafeArea(child:
+
+        new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -85,14 +90,12 @@ class _SearchScreen_person extends State<SearchScreen_person> {
             autofocus: true,
               controller: controller,
               style: subTitleStyle,
-            )
+            ),
 
-        ,
-              new SimpleButton(buttonText: "search", onPressFunction: goToFriend),
-
+              new SimpleButton(buttonText: "Search", onPressFunction: goToFriend),
 
 
-              SizedBox(
+              new Container(
                   height:MediaQuery.of(context).size.height*0.5,
                   child:
                   GoogleMap(
@@ -105,9 +108,8 @@ class _SearchScreen_person extends State<SearchScreen_person> {
                   )
               )
               // add new Widgets here.
-            ])
+            ]))]))
     ) ;
-
   }
 
 
@@ -117,7 +119,6 @@ class _SearchScreen_person extends State<SearchScreen_person> {
   }
 
   Future <void> goToFriend() async{
-
     final GoogleMapController controller = await _controller.future;
     controller.animateCamera(CameraUpdate.newCameraPosition(final_user));
     Marker res = Marker(

@@ -16,7 +16,7 @@ class _SearchScreen extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: colorPallete[900], 
+      backgroundColor: colorPallete[900],
         body: new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
@@ -65,8 +65,9 @@ class _SearchScreen extends State<SearchScreen> {
   }
 
   void goToSearchPerson(){
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context)=>SearchScreen_person()));
+    Navigator.of(context).push(
+        CupertinoPageRoute<Null>(builder: (BuildContext context) {
+          return new SearchScreen_person();
+        }));
   }
-
 }

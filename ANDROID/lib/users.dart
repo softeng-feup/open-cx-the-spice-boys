@@ -1,13 +1,23 @@
-var users = [ ["JOAO ANTONIO", 41.1783,-8.5964],
+var users = [
+  ["JOAO ANTONIO", 41.1783,-8.5964],
   ["ANTONIO MANUEL", 41.1783,-8.5964],
   ["Manuel Joao", 41.1783,-8.5964],
   ["Ademar Aguiar", 41.17765749358881, -8.59574824645452],
   ["b002", 41.17768821131683, -8.595610627369838],
-
+  ["random", 41.17768824331683, -8.595710627369838],
 ];
 
 var feup_loc =[41.1780, -8.5960];
 
+var speakersName = ["Joao", "Gustavo", "Ademar", "Jorge","Tyler Harrison",
+  "Frances Payne",
+  "Rogelio Gibbs",
+  "Chelsea Garza",
+  "Eva Graham",
+  "Andy Byrd",
+  "Cora Franklin",
+  "Silvia Burgess",
+  "Ida White"];
 
 var rooms =[
 ["b003", 41.17768821131673, -8.595610627369808],

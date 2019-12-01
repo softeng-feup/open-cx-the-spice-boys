@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/MapScreen.dart';
 import 'package:flutter_app_test/OptionsScreen.dart';
-import 'secondScreen.dart';
 import 'HowToUseScreen.dart';
 import 'OptionsScreen.dart';
 import 'SearchScreen.dart';
@@ -42,7 +42,6 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => new LoginScreen(),
         "/main": (context) => new MyHomePage(),
-        "/SecondPage": (context) => new SecondScreen(),
       },
     );
   }
@@ -95,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void buttonPressed() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SecondScreen()));
+        context, MaterialPageRoute(builder: (context) => MapScreen()));
   }
   void buttonPressedOptions() {
     Navigator.push(

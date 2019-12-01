@@ -10,7 +10,7 @@ import 'package:flutter_app_test/users.dart';
 
 class MapScreen extends StatefulWidget {
 
-  MapScreen({Key key}) : super(key: key);
+  MapScreen({Key key, position}) : super(key: key);
   @override
   _MapScreen createState() => new _MapScreen();
 
@@ -25,8 +25,7 @@ class _MapScreen extends State<MapScreen> {
 
 
   StreamSubscription<Position> positionStream = geolocator.getPositionStream(
-      locationOptions).listen(
-          (Position position) => print(
+      locationOptions).listen( (Position position) => print(
           position == null ? 'Unknown' : position.latitude.toString() + ', ' +
               position.longitude.toString()));
   static Future<Position> position = geolocator.getCurrentPosition();
@@ -35,15 +34,20 @@ class _MapScreen extends State<MapScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: colorPallete[900],
-        body: new Column(
+        body: SingleChildScrollView(
+        child: Stack(
+        children: <Widget>[
+        new SafeArea(child:
+        new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              new SpearchLogoNoBack(),
 
-              SizedBox(
-                  height:MediaQuery.of(context).size.height*0.5,
+              new SpearchLogo(),
+
+              new Container(
+                  height:MediaQuery.of(context).size.height*0.70,
                   child:
                   GoogleMap(
                     mapType: MapType.hybrid,
@@ -54,12 +58,10 @@ class _MapScreen extends State<MapScreen> {
                   )
               )
               // add new Widgets here.
-            ])
+            ]))]))
     ) ;
 
   }
-
-
 }
 
 

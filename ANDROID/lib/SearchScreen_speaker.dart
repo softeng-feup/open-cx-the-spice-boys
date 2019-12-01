@@ -4,7 +4,6 @@ import 'package:flutter_app_test/UserPage.dart';
 import 'package:flutter_app_test/components/constants.dart';
 import 'components/CustomRaisedButton.dart';
 
-
 var speakersName = ["Joao", "Gustavo", "Ademar", "Jorge","Tyler Harrison",
   "Frances Payne",
   "Rogelio Gibbs",
@@ -68,7 +67,7 @@ class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
     return new Scaffold(
         backgroundColor: colorPallete[900],
         body:
-        SingleChildScrollView(
+        new SingleChildScrollView(
             child: Stack(
                 children: <Widget> [
                   new Column(
@@ -117,6 +116,7 @@ class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
                                   backgroundImage: NetworkImage("https://sigarra.up.pt/feup/en/FOTOGRAFIAS_SERVICE.foto?pct_cod=231081"),),
                                 title: Text(item,style: infoTitleStyle,),
                                 onTap: () {
+
                                   Navigator.push(
                                       context, MaterialPageRoute(builder: (context) => UserPage()));
                                   new MapScreen();},
