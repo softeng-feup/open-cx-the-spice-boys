@@ -3,16 +3,8 @@ import 'package:flutter_app_test/MapScreen.dart';
 import 'package:flutter_app_test/UserPage.dart';
 import 'package:flutter_app_test/components/constants.dart';
 import 'components/CustomRaisedButton.dart';
+import 'package:flutter_app_test/users.dart';
 
-var speakersName = ["Joao", "Gustavo", "Ademar", "Jorge","Tyler Harrison",
-  "Frances Payne",
-  "Rogelio Gibbs",
-  "Chelsea Garza",
-  "Eva Graham",
-  "Andy Byrd",
-  "Cora Franklin",
-  "Silvia Burgess",
-  "Ida White"];
 
 List speakersList = [];
 String spl = "";
@@ -35,12 +27,12 @@ class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
   onChangeSpeakerSearch() {
     controller.text;
     speakersList = [];
-    for(final speaker in speakersName)
+    for(final speaker in users)
     {
+      String speak= speaker[0];
       //TODO create a way to display the names where user can tap on a name to check info about the speaker.
-      if (speaker.toUpperCase().contains(controller.text.toUpperCase())) {
-        speakersList.add(speaker);
-
+      if (speak.toUpperCase().contains(controller.text.toUpperCase())) {
+        speakersList.add(speak);
       }
     }
 
@@ -116,9 +108,10 @@ class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
                                   backgroundImage: NetworkImage("https://sigarra.up.pt/feup/en/FOTOGRAFIAS_SERVICE.foto?pct_cod=231081"),),
                                 title: Text(item,style: infoTitleStyle,),
                                 onTap: () {
+                                  print('CLICKED ON: ' + item);
 
                                   Navigator.push(
-                                      context, MaterialPageRoute(builder: (context) => UserPage()));
+                                      context, MaterialPageRoute(builder: (context) => UserPage(name: item)));
                                   new MapScreen();},
                               );
                             },

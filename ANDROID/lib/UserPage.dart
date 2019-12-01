@@ -4,19 +4,17 @@ import 'package:flutter_app_test/components/CustomRaisedButton.dart';
 import 'package:flutter_app_test/components/constants.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app_test/users.dart';
+import 'package:flutter_app_test/Map2.dart';
 
 
 
-class UserPage extends StatefulWidget {
-  UserPage({Key key}) : super(key: key);
+class UserPage extends StatelessWidget {
+  final String name;
+
+  UserPage({Key key, @required this.name}) : super(key: key);
   @override
-  _UserPage createState() => new _UserPage();
-}
 
-
-/// Displays user Info ->
-class _UserPage extends State<UserPage> {
-  @override
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: colorPallete[900],
@@ -93,7 +91,7 @@ class _UserPage extends State<UserPage> {
                                       padding: EdgeInsets.all(3),
                                       width: MediaQuery.of(context).size.width*0.8,
                                       child:
-                                      new Text("[PLACEHOLDER]:",style: infoTitleStyle),
+                                      new Text( name ,style: infoTitleStyle),
                                     )
                                     ,
                                     new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
@@ -114,19 +112,20 @@ class _UserPage extends State<UserPage> {
 
                         new SimpleButton(
                             buttonText: "Show on Map",
-                            onPressFunction: goToSearchSpeaker
+                            onPressFunction: () {    Navigator.push(
+                                context, MaterialPageRoute(builder: (context) => MapScreen()));}
                         ),
 
 
                       ]))])));
   }
 
-
-  void goToSearchSpeaker()
-  {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => MapScreen()));
-  }
+//
+//  void goToSearchSpeaker()
+//  {
+//    Navigator.push(
+//        context, MaterialPageRoute(builder: (context) => MapScreen()));
+//  }
 }
 
 
