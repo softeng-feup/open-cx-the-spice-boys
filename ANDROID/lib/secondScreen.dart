@@ -40,11 +40,10 @@ class _SecondScreen extends State<SecondScreen> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              new Image.asset('assets/images/mainLogo.png', fit: BoxFit.scaleDown)
+              new SpearchLogo(),
 
-              ,
 
-              SizedBox(
+              new Container(
                   height:MediaQuery.of(context).size.height*0.5,
                   child:
                   GoogleMap(

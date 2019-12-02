@@ -110,10 +110,16 @@ class UserPage extends StatelessWidget {
 
                         new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.04)),
 
+//                        new SimpleButton(
+//                            buttonText: "Show on Map",
+//                            onPressFunction: () {    Navigator.push(
+//                                context, MaterialPageRoute(builder: (context) => MapScreen()));}
+
                         new SimpleButton(
                             buttonText: "Show on Map",
                             onPressFunction: () {    Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => MapScreen()));}
+                                context, MaterialPageRoute(builder: (context) => Map2(lat: 41.17765749358881, long: -8.59574824645452, name: name)));}
+
                         ),
 
 
