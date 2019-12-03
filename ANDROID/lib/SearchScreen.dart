@@ -4,7 +4,8 @@ import 'package:flutter_app_test/SearchScreen_Speaker.dart';
 import 'package:flutter_app_test/components/constants.dart';
 import 'package:flutter_app_test/SearchScreen_person.dart';
 import 'components/CustomRaisedButton.dart';
-
+import 'package:flutter_app_test/SearchScreen_contacts.dart';
+import 'package:flutter_app_test/SearchScreen_event.dart';
 
 class SearchScreen extends StatefulWidget {
   SearchScreen({Key key}) : super(key: key);
@@ -31,7 +32,7 @@ class _SearchScreen extends State<SearchScreen> {
                   style: subTitleStyle),
 
               new SimpleButton( onPressFunction: goToSearchPerson, buttonText: "Search your Peers"),
-              new SimpleButton( onPressFunction: null, buttonText: "Contact List"),
+              new SimpleButton( onPressFunction: goToContactList, buttonText: "Contact List"),
 
               new Padding(
                 padding: const EdgeInsets.all(24.0),
@@ -53,7 +54,7 @@ class _SearchScreen extends State<SearchScreen> {
   {
     Navigator.of(context).push(
         CupertinoPageRoute<Null>(builder: (BuildContext context) {
-          return new SearchScreenSpeaker();
+          return new SearchScreen_event();
         }));
   }
 
@@ -70,4 +71,13 @@ class _SearchScreen extends State<SearchScreen> {
           return new SearchScreen_person();
         }));
   }
+
+
+  void goToContactList(){
+    Navigator.of(context).push(
+        CupertinoPageRoute<Null>(builder: (BuildContext context) {
+          return new SearchScreen_contacts();
+        }));
+  }
+
 }

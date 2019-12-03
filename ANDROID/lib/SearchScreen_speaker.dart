@@ -8,6 +8,8 @@ import 'package:flutter_app_test/users.dart';
 
 List speakersList = [];
 String spl = "";
+List companies = [];
+List talks = [];
 
 List<Widget> listOfUsers = [ Text('test')];
 
@@ -30,9 +32,14 @@ class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
     for(final speaker in users)
     {
       String speak= speaker[0];
-      //TODO create a way to display the names where user can tap on a name to check info about the speaker.
-      if (speak.toUpperCase().contains(controller.text.toUpperCase())) {
-        speakersList.add(speak);
+      String sp = speaker[3];
+      if(sp.contains("speaker")) {
+        //TODO create a way to display the names where user can tap on a name to check info about the speaker.
+        if (speak.toUpperCase().contains(controller.text.toUpperCase())) {
+          speakersList.add(speak);
+          companies.add(speaker[4]);
+          talks.add(speaker[5]);
+        }
       }
     }
 
@@ -70,11 +77,7 @@ class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
                         new SpearchLogo(),
                         new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
 
-                        new SimpleFlatButton(buttonText: "Spreach your Speaker", onPressFunction: null),
-//                new Text(
-//                    "Spreach your Speaker",
-//                    textAlign: TextAlign.center,
-//                    style: subTitleStyle,),
+                        new SimpleFlatButton(buttonText: "Spearch your Speaker", onPressFunction: null),
 
                         new Container(
                             padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.025),
@@ -102,6 +105,8 @@ class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
                             itemCount: speakersList.length,
                             itemBuilder: (context, index) {
                               final item = speakersList[index];
+                              final company =companies[index];
+                              final nxt_talk = talks[index];
                               return ListTile(
                                 leading:
                                 CircleAvatar(
@@ -111,7 +116,7 @@ class _SearchScreenSpeaker extends State<SearchScreenSpeaker>
                                   print('CLICKED ON: ' + item);
 
                                   Navigator.push(
-                                      context, MaterialPageRoute(builder: (context) => UserPage(name: item)));
+                                      context, MaterialPageRoute(builder: (context) => SpeakerUserPage(name: item, company: company, nextTalk: nxt_talk,)));
                                   new MapScreen();},
                               );
                             },

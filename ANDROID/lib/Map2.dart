@@ -17,23 +17,21 @@ class Map2 extends StatelessWidget {
   @override
 
 
-  static var geolocator = Geolocator();
-  static var locationOptions = LocationOptions(accuracy: LocationAccuracy.best, distanceFilter: 1);
-
-
-  StreamSubscription<Position> positionStream = geolocator.getPositionStream(
-      locationOptions).listen( (Position position) => print(
-      position == null ? 'Unknown' : position.latitude.toString() + ', ' +
-          position.longitude.toString()));
-  static Future<Position> position = geolocator.getCurrentPosition();
   Completer<GoogleMapController> _controller = Completer();
 
-  CameraPosition user = CameraPosition(target: LatLng(feup_loc.elementAt(0), feup_loc.elementAt(1)), zoom: 17);
 
   Set<Marker> markers = Set();
 
 @override
   Widget build(BuildContext context) {
+  CameraPosition user = CameraPosition(target: LatLng(getLat(), getLong()), zoom: 17);
+  markers.add(Marker(
+      markerId: MarkerId(name),
+      infoWindow: InfoWindow(
+          title: name),
+      //position: LatLng(lat, long)
+      position: LatLng(lat,long)
+  ));
     return new Scaffold(
         backgroundColor: colorPallete[900],
         body: SingleChildScrollView(
@@ -59,7 +57,6 @@ class Map2 extends StatelessWidget {
                               onMapCreated: (GoogleMapController controller){
                                 print("map ready");
                                 // ADD TARGETS
-                                goToFriend();
 
                                 _controller.complete(controller);
 
@@ -80,24 +77,14 @@ class Map2 extends StatelessWidget {
   }
 
 
-  Future <void> goToFriend() async{
-
-//    sleep(const Duration(seconds:1));
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(
-        CameraPosition(target: LatLng(lat, long), zoom: 18)
-    ));
-    Marker res = Marker(
-      markerId: MarkerId(name),
-      infoWindow: InfoWindow(
-          title: name),
-      //position: LatLng(lat, long)
-        position: LatLng(41.1783,-8.5964)
-    );
-    markers.add(res);
-    // Add marker to GMAP.
+  double getLat(){
+    return this.lat;
   }
 
+
+  double getLong(){
+    return this.long;
+  }
 }
 
 

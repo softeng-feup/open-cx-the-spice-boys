@@ -42,8 +42,6 @@ class _OptionsScreen extends State<OptionsScreen> {
   {
     exit(0);
     SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-    //SystemNavigator.pop();
-//    SystemChannels.platform.invokeMethod('SystemNavigator.pop');
   }
 }
 

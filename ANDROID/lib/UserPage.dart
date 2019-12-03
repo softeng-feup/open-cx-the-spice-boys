@@ -9,13 +9,16 @@ import 'package:flutter_app_test/Map2.dart';
 
 
 
-class UserPage extends StatelessWidget {
+class SpeakerUserPage extends StatelessWidget {
   final String name;
+  final String company;
+  final List nextTalk;
 
-  UserPage({Key key, @required this.name}) : super(key: key);
+  SpeakerUserPage({Key key, @required this.name, @required this.company, @required this.nextTalk}) : super(key: key);
   @override
 
   Widget build(BuildContext context) {
+    bool pressAttention = false;
     return new Scaffold(
         backgroundColor: colorPallete[900],
         body: SingleChildScrollView(
@@ -41,7 +44,7 @@ class UserPage extends StatelessWidget {
                                 ),
                               ),
 
-                              new AddToContacts()
+                              new AddToContacts(this.name)
                             ]),
 
                         //TODO -> Add a button to "Add to Contacts here"
@@ -102,7 +105,17 @@ class UserPage extends StatelessWidget {
                                       padding: EdgeInsets.all(3),
                                       width: MediaQuery.of(context).size.width*0.8,
                                       child:
-                                      new Text("[PLACEHOLDER]",style: infoTitleStyle),
+                                      new Text(company,style: infoTitleStyle),
+                                    ),
+
+
+                                    new Text("Next Talk:",style: subTitleStyle),
+                                    new Container(
+                                      color: colorPallete[800],
+                                      padding: EdgeInsets.all(3),
+                                      width: MediaQuery.of(context).size.width*0.8,
+                                      child:
+                                      new Text(nextTalk[0] +"\n" + nextTalk[2],style: infoTitleStyle),
                                     )
                                   ],
                                 )]),
@@ -118,10 +131,9 @@ class UserPage extends StatelessWidget {
                         new SimpleButton(
                             buttonText: "Show on Map",
                             onPressFunction: () {    Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => Map2(lat: 41.17765749358881, long: -8.59574824645452, name: name)));}
+                                context, MaterialPageRoute(builder: (context) => Map2(lat: nextTalk[1][1], long: nextTalk[1][2], name: nextTalk[0] + "  " + nextTalk[2])));}
 
                         ),
-
 
                       ]))])));
   }
@@ -135,14 +147,152 @@ class UserPage extends StatelessWidget {
 }
 
 
+
+
+class UserPage extends StatelessWidget {
+  final String name;
+  final String company;
+  final double last_lat;
+  final double last_long;
+
+  UserPage({Key key, @required this.name, @required this.company, @required this.last_lat, @required this.last_long}) : super(key: key);
+  @override
+
+  Widget build(BuildContext context) {
+    bool pressAttention = false;
+    return new Scaffold(
+        backgroundColor: colorPallete[900],
+        body: SingleChildScrollView(
+            child: Stack(
+                children: <Widget>[
+                  new SafeArea(child:
+                  new Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+
+                        new Row(
+                            children: <Widget>[
+                              new InkWell(
+                                onTap: () { Navigator.pop(context);},
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width * 0.03),
+                                  alignment: Alignment.topLeft,
+                                  color: colorPallete[900],
+                                  child: Image.asset('assets/images/backArrow.png',fit: BoxFit.scaleDown,
+                                      width: (MediaQuery.of(context).size.height * 0.05), height: (MediaQuery.of(context).size.height* 0.05)),
+                                ),
+                              ),
+
+                              new AddToContacts(this.name)
+                            ]),
+
+                        //TODO -> Add a button to "Add to Contacts here"
+
+//              new Padding(padding:  EdgeInsets.all(MediaQuery.of(context).size.width*0.01)),
+//
+//
+//                  new Text(
+//                      "User1",
+//                      textAlign: TextAlign.center,
+//                      style: subTitleStyle),
+
+
+                        new Container(
+                            color: colorPallete[700],
+                            width: MediaQuery.of(context).size.width *0.6,
+                            height: MediaQuery.of(context).size.width *0.6,
+                            child:
+                            PhotoView(
+                              imageProvider: NetworkImage("https://sigarra.up.pt/feup/en/FOTOGRAFIAS_SERVICE.foto?pct_cod=231081"),
+                              initialScale: PhotoViewComputedScale.contained,
+                            )
+                        ),
+
+                        new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
+
+
+                        /// Information Container
+                        new Container(
+                          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+                          alignment: Alignment.center,
+                          width: MediaQuery.of(context).size.width*0.8,
+
+                          child:
+                          new Stack(
+                              children: <Widget>[
+                                new Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: <Widget>[
+
+                                    new Text("Full Name:",
+                                        style: subTitleStyle),
+                                    new Container(
+                                      color: colorPallete[800],
+                                      padding: EdgeInsets.all(3),
+                                      width: MediaQuery.of(context).size.width*0.8,
+                                      child:
+                                      new Text( name ,style: infoTitleStyle),
+                                    )
+                                    ,
+                                    new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
+
+                                    new Text("Company:",style: subTitleStyle),
+                                    new Container(
+                                      color: colorPallete[800],
+                                      padding: EdgeInsets.all(3),
+                                      width: MediaQuery.of(context).size.width*0.8,
+                                      child:
+                                      new Text(company,style: infoTitleStyle),
+                                    ),
+
+                                  ],
+                                )]),
+                        ),
+
+                        new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.04)),
+
+//                        new SimpleButton(
+//                            buttonText: "Show on Map",
+//                            onPressFunction: () {    Navigator.push(
+//                                context, MaterialPageRoute(builder: (context) => MapScreen()));}
+
+                        new SimpleButton(
+                            buttonText: "Show on Map",
+                            onPressFunction: () {    Navigator.push(
+                                context, MaterialPageRoute(builder: (context) => Map2(lat: last_lat, long: last_long, name: name)));}
+
+                        ),
+
+                      ]))])));
+  }
+
+//
+//  void goToSearchSpeaker()
+//  {
+//    Navigator.push(
+//        context, MaterialPageRoute(builder: (context) => MapScreen()));
+//  }
+}
+
+
+
+
 /// Add to Contacts button
 class AddToContacts extends StatefulWidget {
+  final String name;
+  AddToContacts(this.name);
   @override
-  _AddToContacts createState() => _AddToContacts();
+  _AddToContacts createState() => _AddToContacts(name);
 }
 
 class _AddToContacts extends State<AddToContacts>
 {
+  final String name;
+  _AddToContacts(this.name);
   bool pressAttention = false;
   @override
   Widget build(BuildContext context) {
@@ -174,7 +324,7 @@ class _AddToContacts extends State<AddToContacts>
                     new RaisedButton(
                         key: null,
                         color: const Color(0xFFe0e0e0),
-                        onPressed: () => setState(() => pressAttention = !pressAttention),
+                        onPressed: () {setState(() => pressAttention = !pressAttention); if(!contact.contains(this.name))contact.add(this.name);},
                         child: new Text(
                           'Add To Contacts',
                           style: new TextStyle(
