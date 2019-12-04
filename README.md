@@ -1,8 +1,4 @@
-# openCX-
-
-# Spearch
-
-# Development Report
+# openCX- Spearch Development Report
 
 Welcome to the documentation pages of Spearch of **openCX**!
 
