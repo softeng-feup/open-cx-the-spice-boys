@@ -41,6 +41,8 @@ _João Paulo Ribeiro Nunes_
 
 _Jorge David Monteiro Pacheco_
 
+# Business modeling
+
 **Product Vision**
 
 We aim to provide a solid and reliable solution to lost attendees in conferences, while allowing friends to find each other across the event site.
@@ -51,7 +53,7 @@ Ever got lost at a convention? Having a hard time finding a friend? Just _Spearc
 
 We aim to deliver a better user experience when attending an event by allowing you to locate your friends or peers, but also finding out where a certain talk will take place, while still being able to maintain your privacy if desired.
 
-**Requirements**
+# Requirements
 
 **Use case diagram**
 
