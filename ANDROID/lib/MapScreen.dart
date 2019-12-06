@@ -8,25 +8,24 @@ import 'package:geolocator/geolocator.dart';
 import 'package:flutter_app_test/users.dart';
 
 
-class SecondScreen extends StatefulWidget {
+class MapScreen extends StatefulWidget {
 
-  SecondScreen({Key key}) : super(key: key);
+  MapScreen({Key key, position}) : super(key: key);
   @override
-  _SecondScreen createState() => new _SecondScreen();
+  _MapScreen createState() => new _MapScreen();
 
 }
 
 
 
-class _SecondScreen extends State<SecondScreen> {
+class _MapScreen extends State<MapScreen> {
 
   static var geolocator = Geolocator();
   static var locationOptions = LocationOptions(accuracy: LocationAccuracy.best, distanceFilter: 1);
 
 
   StreamSubscription<Position> positionStream = geolocator.getPositionStream(
-      locationOptions).listen(
-          (Position position) => print(
+      locationOptions).listen( (Position position) => print(
           position == null ? 'Unknown' : position.latitude.toString() + ', ' +
               position.longitude.toString()));
   static Future<Position> position = geolocator.getCurrentPosition();
@@ -35,16 +34,20 @@ class _SecondScreen extends State<SecondScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: colorPallete[900],
-        body: new Column(
+        body: SingleChildScrollView(
+        child: Stack(
+        children: <Widget>[
+        new SafeArea(child:
+        new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+
               new SpearchLogo(),
 
-
               new Container(
-                  height:MediaQuery.of(context).size.height*0.5,
+                  height:MediaQuery.of(context).size.height*0.70,
                   child:
                   GoogleMap(
                     mapType: MapType.hybrid,
@@ -55,12 +58,10 @@ class _SecondScreen extends State<SecondScreen> {
                   )
               )
               // add new Widgets here.
-            ])
+            ]))]))
     ) ;
 
   }
-
-
 }
 
 

@@ -19,28 +19,29 @@ class Event{
 
 
 
-
+/*
 class Day{
   int day;
   List<Event> event;
-  Day({this.day, this.event});
+  Day(day, {this.day, this.event, List list});
 
   factory Day.fromJson(Map<String, dynamic> parsedJson){
+    var list;
     return Day(
-      day: parsedJson['day'],
-      var list = parsedJson['events'] as List;
-      List<Event> event = list.map((i) => Event.fromJson(i)).toList();
+        day: parsedJson['day'],
+        list: parsedJson['events'] as List,
+    List<Event> event = list.map((i) => Event.fromJson(i)).toList()
     );
   }
 }
 
 class Conference{
   List<Day> days;
-  
+
   factory Conference.fromJson(Map<String, dynamic> parsedJson){
     return Conference(
-      var list = parsedJson['conference'] as List;
-      List<Day> days = list.map((i) => Day.fromJson(i)).toList();
+    var list = parsedJson['conference'] as List;
+    List<Day> days = list.map((i) => Day.fromJson(i)).toList();
     );
   }
 }
@@ -56,8 +57,8 @@ class User{
       name :parsedJson['name'],
       contact_list : parsedJson['Contact_List'] as List,
       last_location : parsedJson['Last_Location'],
-      toggle : parsedJson['toggle'],    
+      toggle : parsedJson['toggle'],
     );
   }
 }
-
+*/

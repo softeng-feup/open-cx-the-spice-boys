@@ -1,25 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/MapScreen.dart';
 import 'package:flutter_app_test/OptionsScreen.dart';
-import 'secondScreen.dart';
 import 'HowToUseScreen.dart';
 import 'OptionsScreen.dart';
 import 'SearchScreen.dart';
 import 'components/CustomRaisedButton.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'components/constants.dart';
 
 ///  Attempt at creating colors
-Map<int, Color> blueShades = {
-  50: Color.fromRGBO(36, 52, 112, .1),
-  100: Color.fromRGBO(36, 52, 112, .2),
-  200: Color.fromRGBO(36, 52, 112, .3),
-  300: Color.fromRGBO(36, 52, 112, .4),
-  400: Color.fromRGBO(36, 52, 112, .5),
-  500: Color.fromRGBO(36, 52, 112, .6),
-  600: Color.fromRGBO(36, 52, 112, .7),
-  700: Color.fromRGBO(36, 52, 112, .8),
-  800: Color.fromRGBO(36, 52, 112, .9),
-  900: Color.fromRGBO(36, 52, 112, 1),
-};
-MaterialColor colorCustom = MaterialColor(0xFF880E4F, blueShades);
+MaterialColor colorCustom = MaterialColor(0xFF880E4F, colorPallete);
 
 
 /// Class to pass arguments through screens
@@ -50,8 +40,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        "/": (context) => new MyHomePage(),
-        "/SecondPage": (context) => new SecondScreen(),
+        "/": (context) => new LoginScreen(),
+        "/main": (context) => new MyHomePage(),
       },
     );
   }
@@ -67,48 +57,32 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: blueShades[900],
+      backgroundColor: colorPallete[900],
       body:  new Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            new Image.asset(
-              'assets/images/toplogo_light.png',
-              fit: BoxFit.scaleDown,
-            ),
-            new FlatButton(
-                key: null,
-                onPressed: buttonPressedHowToUse,
-                child: new Text(
-                  "How to use?",
-                  style: new TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Roboto"),
-                )),
+            new SpearchLogoNoBack(),
 
-           //TESTING THIS
-            new SimpleButton(
-              onPressFunction: buttonPressedSearch,
-              buttonText: "Search",
-            ),
+            new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
+
+            new SimpleFlatButton(buttonText: "How to use?", onPressFunction: buttonPressedHowToUse),
+
+            new SimpleButton( buttonText: "Search",onPressFunction: buttonPressedSearch),
 
             new Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.05),
             ),
-            new SimpleButton(
-              onPressFunction: buttonPressedOptions,
-              buttonText: "Options"),
 
-            new SimpleButton(
-                buttonText: "Check Map",
-                onPressFunction: buttonPressed)
+            new SimpleButton( buttonText: "Options" , onPressFunction: buttonPressedOptions),
+
+            new SimpleButton( buttonText: "Check Map", onPressFunction: buttonPressed)
 
           ]),
     );
   }
+  /// Functions implementation
   void buttonPressedSearch(){
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => SearchScreen()));
@@ -120,27 +94,92 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void buttonPressed() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SecondScreen()));
+        context, MaterialPageRoute(builder: (context) => MapScreen()));
   }
   void buttonPressedOptions() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => OptionsScreen()));
   }
-
 }
 
 
 
 
-/* new RaisedButton(
-                key: null,
-                onPressed: buttonPressedSearch,
-                color: const Color(0xFFe0e0e0),
-                child: new Text(
-                  "Search",
-                  style: new TextStyle(
-                      fontSize: 12.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Roboto"),
-                )),*/
+
+/// LOGIN-screen
+class LoginScreen extends StatefulWidget {
+  LoginScreen({Key key}) : super(key: key);
+  @override
+  _LoginScreen createState() => new _LoginScreen();
+}
+
+/// LOGIN-screen
+class _LoginScreen extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        backgroundColor: colorPallete[900],
+        body:  SingleChildScrollView(
+            child: Stack(
+              children: <Widget>[
+                new SafeArea(child:
+
+                new Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+
+                      /// logo
+                      new Container(
+                        height: MediaQuery.of(context).size.height * 0.26,
+                        child: new Image.asset('assets/images/mainLogo.png', fit: BoxFit.scaleDown),
+                      ),
+
+                      new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.05)),
+
+                      new Container(
+                          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.06 ),
+                          child:
+                          new Text("Username",
+                              //textAlign: TextAlign.center,
+                              style: subTitleStyle)),
+
+                      /// Forms to username and password
+                      new Container(
+                          color: colorPallete[800],
+                          child:
+                          new TextFormField( obscureText: false,
+                            decoration: new InputDecoration(contentPadding: const EdgeInsets.all(16.0)),
+                          )            )
+                      ,
+
+                      new Padding(padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.02)),
+
+                      new Container(
+                          padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.06 ),
+                          child:
+                          new Text("Password",
+                              //textAlign: TextAlign.center,
+                              style: subTitleStyle)),
+
+                      new Container(
+                          color: colorPallete[800],
+                          child:
+                          new TextFormField( obscureText: true,
+                              decoration: new InputDecoration(contentPadding: const EdgeInsets.all(16.0))
+                          )            )
+                      ,
+                      new Padding(padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.0125)),
+                      new SimpleButton(buttonText: "Login", onPressFunction: logInAttempt),    //TODO define log in function
+
+
+                    ]))],
+            )));
+  }
+  /// Functions implementation
+  void logInAttempt() {
+    Navigator.pushReplacementNamed(context, '/main');
+//        Navigator.pushNamed(context, '/main');
+  }
+}
