@@ -220,3 +220,13 @@ A good practice is to simplify this, avoiding repetitions, and automating the te
 Configuration and change management are key activities to control change to, and maintain the integrity of, a project&#39;s artifacts (code, models, documents).
 
 For the purpose of ESOF, we will use a very simple approach, just to manage feature requests, bug fixes, and improvements, using GitHub issues and following the [GitHub flow](https://guides.github.com/introduction/flow/).
+
+## Project management
+
+As a project management tool, we have adopted Trello as it is a simple tool that allows us to keep an overview of the development of the project, as well as plan future changes in which we can easily assign and register tasks.
+In addition to this we use Miro to perform the user case map.
+Outside that, Github is being used as the repository to keep the code and other resources.
+
+[Trello] ()
+[Miro] (https://miro.com/app/board/o9J_kwfPXrU=/)
+
