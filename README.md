@@ -217,9 +217,10 @@ A good practice is to simplify this, avoiding repetitions, and automating the te
 
 ## Configuration and change management
 
-Configuration and change management are key activities to control change to, and maintain the integrity of, a project&#39;s artifacts (code, models, documents).
+Throughout the development of the project, the team decided to use the features presented by the Github Flow in order to manage the application's progress:
 
-For the purpose of ESOF, we will use a very simple approach, just to manage feature requests, bug fixes, and improvements, using GitHub issues and following the [GitHub flow](https://guides.github.com/introduction/flow/).
+ - Use of **branches** every time a new feature was added
+ - Use of **pull requests** every time a branch was completed and ready to be merge with the main branch
 
 ## Project management
 
