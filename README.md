@@ -69,7 +69,7 @@ We aim to deliver a better user experience when attending an event by allowing y
   3. User must be attending the conference and have an account.
   4. Target users must have also the app and a valid account.
 - **Postconditions**.
-  1. Describe also the state of the system at the conclusion of the use case execution (postconditions).
+  1. Describe the state of the system at the conclusion of the use case execution (postconditions).
 - **Normal Flow**.
   1. A user opens the app.
   2. Picks a person or a place, out of the available options;
