@@ -222,9 +222,10 @@ Below you will find a small description of each one of the project iterations.
 **Iteration 4:**
   In the fourth part of the development we integrated what we've done in previous iterations with our own backend and started working on the tracking aspect of the application and figuring out the best way of doing it.
   The backend was designed in order to accomplish the needs or our app.
+  
   The Group established the use of the above refered APIs, google_maps_flutter and geolocator, two open source plugins for Flutter wich turned out to be very useful.
-  **Props to them.**
   Finishing report.
+  
 **Iteration 5:**
   Still doing it!
 
