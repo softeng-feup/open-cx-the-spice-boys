@@ -193,7 +193,7 @@ Our project is composed by two main modules:
 
 2. After searching for an existing speaker, the app will access the information stored and will display the user page accordingly and will give the user the option to locate the person.
 
-3. After searching for a conferance event, the application will access the information stored and will display the event related page accordingly.
+3. After searching for a conference event, the application will access the information stored and will display the event related page accordingly.
 
 
 ## Implementation
@@ -203,6 +203,30 @@ Regular product increments are a good practice of product management.
 While not necessary, sometimes it might be useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. Since the code should speak by itself, try to keep this section as short and simple as possible.
 
 Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
+
+Our application was developed with the use of the Flutter SDK and two GPS APIs, specifically designed for Flutter (google_maps_flutter and geolocator plugins) and necessary to obtain the specific locations of each user.
+
+Below you will find a small description of each one of the project iterations.
+
+**Iteration 1:**
+  Development of the project idea, project vision, mockups, use case diagram, user stories initial version and elevator pitch.
+
+**Iteration 2:**
+  Improvement of the project idea, improvement of user stories and acceptance tests.
+  Project requirements and business modeling.
+
+**Iteration 3:**
+  Initial flutter development, beginning to implement simple features.
+  Progress on report: finishing user stories, requirements and business modeling. Starting on domain model.
+
+**Iteration 4:**
+  In the fourth part of the development we integrated what we've done in previous iterations with our own backend and started working on the tracking aspect of the application and figuring out the best way of doing it.
+  The backend was designed in order to accomplish the needs or our app.
+  The Group established the use of the above refered APIs, google_maps_flutter and geolocator, two open source plugins for Flutter wich turned out to be very useful.
+  **Props to them.**
+  Finishing report.
+**Iteration 5:**
+  Still doing it!
 
 ## Test
 
@@ -219,8 +243,8 @@ A good practice is to simplify this, avoiding repetitions, and automating the te
 
 Throughout the development of the project, the team decided to use the features presented by the Github Flow in order to manage the application's progress:
 
- - Use of **branches** every time a new feature was added
- - Use of **pull requests** every time a branch was completed and ready to be merge with the main branch
+ - Use of **branches** every time a new iteration was launched.
+ - Use of **pull requests** every time a branch was completed and ready to be merge with the main branch.
 
 ## Project management
 
