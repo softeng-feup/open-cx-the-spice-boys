@@ -20,9 +20,9 @@ You can find here detailed information about the product, hereby mentioned as mo
 - Test
   - [Automated tests](#Test): Functional tests, integration tests, acceptance tests, as much automated as possible.
 - Change management
-  - [Issues at Github](https://github.com/softeng-feup/open-cx/blob/master/docs/templates)
+  - [Issues at Github](#Configuration-and-change-management)
 - Project management
-  - Tasks management tool
+  - [Tasks management tool](#Project-management)
 
 So far, contributions are exclusively made by the initial team, but we hope to open them to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
