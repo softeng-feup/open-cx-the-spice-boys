@@ -5,7 +5,7 @@ Welcome to the documentation pages of Spearch of **openCX**!
 You can find here detailed information about the product, hereby mentioned as module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP):
 
 - Business modeling
-  - [Product Vision](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md#Product-Vision)
+  - [Product Vision](#Product-Vision)
   - [Elevator Pitch](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md#Elevator-Pitch)
 - Requirements
   - [Use Case Diagram](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md#Use-case-diagram)
@@ -43,11 +43,11 @@ _Jorge David Monteiro Pacheco_
 
 # Business modeling
 
-**Product Vision**
+## Product Vision
 
 We aim to provide a solid and reliable solution to lost attendees in conferences, while allowing friends to find each other across the event site.
 
-**Elevator Pitch**
+# Elevator Pitch
 
 Ever got lost at a convention? Having a hard time finding a friend? Just _Spearch_ it out! Our product will solve all those your problems.
 
