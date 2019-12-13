@@ -6,20 +6,19 @@ You can find here detailed information about the product, hereby mentioned as mo
 
 - Business modeling
   - [Product Vision](#Product-Vision)
-  - [Elevator Pitch](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md#Elevator-Pitch)
+  - [Elevator Pitch](#Elevator-Pitch)
 - Requirements
-  - [Use Case Diagram](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md#Use-case-diagram)
-  - [User stories](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md#User-stories)
-  - [Domain model](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md#Domain-model)
+  - [Use Case Diagram](#Use-case-diagram)
+  - [User stories](#User-stories)
+  - [Domain model](#Domain-model)
 - Architecture and Design
-  - [Architectural and design decisions](https://github.com/softeng-feup/open-cx/blob/master/docs/templates)
-  - [Technological architecture](https://github.com/softeng-feup/open-cx/blob/master/docs/templates)
-  - [Logical architecture](https://github.com/softeng-feup/open-cx/blob/master/docs/templates)
+  - [Architectural and design decisions](#Architecture-and-Design)
+  - [Logical architecture](#Logical-architecture)
+  - [Physical architecture](#Physical-architecture)
 - Implementation
-  - [Source code](https://github.com/softeng-feup/open-cx/blob/master/docs/templates)
-  - [Issues](https://github.com/softeng-feup/open-cx/blob/master/docs/templates): feature requests, bug fixes, improvements.
+  - [Iterations](#Implementation)
 - Test
-  - [Automated tests](https://github.com/softeng-feup/open-cx/blob/master/docs/templates): Functional tests, integration tests, acceptance tests, as much automated as possible.
+  - [Automated tests](#Test): Functional tests, integration tests, acceptance tests, as much automated as possible.
 - Change management
   - [Issues at Github](https://github.com/softeng-feup/open-cx/blob/master/docs/templates)
 - Project management
@@ -47,7 +46,7 @@ _Jorge David Monteiro Pacheco_
 
 We aim to provide a solid and reliable solution to lost attendees in conferences, while allowing friends to find each other across the event site.
 
-# Elevator Pitch
+## Elevator Pitch
 
 Ever got lost at a convention? Having a hard time finding a friend? Just _Spearch_ it out! Our product will solve all those your problems.
 
@@ -55,7 +54,7 @@ We aim to deliver a better user experience when attending an event by allowing y
 
 # Requirements
 
-**Use case diagram**
+## Use case diagram
 
 ![User Case Diagram](/docs/images/user_case_diagram.png)
 
@@ -82,7 +81,7 @@ We aim to deliver a better user experience when attending an event by allowing y
   2. User smartphone disconnect from internet or can&#39;t connect to server: User can&#39;t access live information about users. Current navigations try to progress with the offline data.
   3. User smartphone doesn&#39;t have GPS location: User can&#39;t start any navigation and current navigations should halt.
 
-**User stories**
+## User stories
 
 **User story 1:**
 
@@ -166,7 +165,7 @@ Effort: L
  
 ![User Story Map](/docs/images/user_case_map.png)
  
-### Domain model
+## Domain model
 
 ![Class Diagram](/docs/images/class_diagram.png)
 
