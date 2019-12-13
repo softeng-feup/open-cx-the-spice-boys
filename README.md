@@ -227,7 +227,8 @@ Below you will find a small description of each one of the project iterations.
   Finishing report.
   
 **Iteration 5:**
-  Still doing it!
+  We were asked to integrate one of our features on the main project (open-cx).
+  Integrated contacts and marker show-on-map functionalities to the main project.
 
 ## Test
 
