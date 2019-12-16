@@ -247,6 +247,6 @@ As a project management tool, we have adopted Trello as it is a simple tool that
 In addition to this we use Miro to perform the user case map.
 Outside that, Github is being used as the repository to keep the code and other resources.
 
-- [Trello] ()
+- [Trello] (https://trello.com/b/4Lg9LMpn/esof)
 - [Miro] (https://miro.com/app/board/o9J_kwfPXrU=/)
 
