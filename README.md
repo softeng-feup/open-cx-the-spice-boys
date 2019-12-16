@@ -179,7 +179,7 @@ Our project is composed by two main modules:
 
 ### Logical architecture
 
-![Logical architecture](/docs/images/logical_arc.png)
+![Logical architecture](/docs/images/logical.png)
 
 
 ### Physical architecture
