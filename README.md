@@ -244,7 +244,7 @@ Throughout the development of the project, the team decided to use the features 
 ## Project management
 
 As a project management tool, we have adopted Trello as it is a simple tool that allows us to keep an overview of the development of the project, as well as plan future changes in which we can easily assign and register tasks.
-In addition to this we use Miro to perform the user case map.
+In addition to this we use Miro to perform the user case map. 
 Outside that, Github is being used as the repository to keep the code and other resources.
 
 - [Trello] (https://trello.com/b/4Lg9LMpn/esof)
