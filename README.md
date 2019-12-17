@@ -58,6 +58,11 @@ We aim to deliver a better user experience when attending an event by allowing y
 
 ![User Case Diagram](/docs/images/user_case_diagram.png)
 
+
+*Locate other users* - Using the app, the user can find the latest knowed location of another user. 
+
+*Locate rooms of events* - Using the app. the user can access all the relevant information related to the conference's events
+
 - **Actor**: A conference participant who downloaded the app.
 - **Description**: Improving the conference&#39;s experience by making it easier for people to find each other or a desired session location.
 - **Preconditions**:
