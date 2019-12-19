@@ -17,7 +17,7 @@ import 'constants.dart';
 //  @override
 //  Widget build(BuildContext context) => RaisedButton(
 //      key: null,
-//      onPressed: onPressFunction,    //Todo
+//      onPressed: onPressFunction,
 //      color: const Color(0xFFe0e0e0),
 //      child: new Text(
 //        buttonText,
@@ -51,7 +51,7 @@ class SimpleButton extends Container
         child:
                   new RaisedButton(
                     key: null,
-                    onPressed: onPressFunction,    //Todo
+                    onPressed: onPressFunction,
                     color: const Color(0xFFe0e0e0),
                     child: new Text(
                       buttonText,
@@ -80,7 +80,7 @@ class SimpleFlatButton extends FlatButton
   @override
   Widget build(BuildContext context) => RaisedButton(
       key: null,
-      onPressed: onPressFunction,    //Todo
+      onPressed: onPressFunction,
       color: const Color(0x00000000),
       child: new Text(
             buttonText,

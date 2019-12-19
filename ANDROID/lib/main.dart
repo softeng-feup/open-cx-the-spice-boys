@@ -7,9 +7,13 @@ import 'SearchScreen.dart';
 import 'components/CustomRaisedButton.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'components/constants.dart';
+import 'components/validators.dart';
+
 
 ///  Attempt at creating colors
 MaterialColor colorCustom = MaterialColor(0xFF880E4F, colorPallete);
+
+
 
 
 /// Class to pass arguments through screens
@@ -78,6 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
             new SimpleButton( buttonText: "Options" , onPressFunction: buttonPressedOptions),
 
             new SimpleButton( buttonText: "Check Map", onPressFunction: buttonPressed)
+
+            ,
 
           ]),
     );
@@ -151,6 +157,7 @@ class _LoginScreen extends State<LoginScreen> {
                           child:
                           new TextFormField( obscureText: false,
                             decoration: new InputDecoration(contentPadding: const EdgeInsets.all(16.0)),
+                          validator: (value) => LoginFieldValidator.validateEmail(value),
                           )            )
                       ,
 
@@ -167,8 +174,10 @@ class _LoginScreen extends State<LoginScreen> {
                           color: colorPallete[800],
                           child:
                           new TextFormField( obscureText: true,
-                              decoration: new InputDecoration(contentPadding: const EdgeInsets.all(16.0))
-                          )            )
+                              decoration: new InputDecoration(contentPadding: const EdgeInsets.all(16.0)),
+                              validator:  LoginFieldValidator.validatePassword,
+
+    )            )
                       ,
                       new Padding(padding: EdgeInsets.all( MediaQuery.of(context).size.height * 0.0125)),
                       new SimpleButton(buttonText: "Login", onPressFunction: logInAttempt),    //TODO define log in function
