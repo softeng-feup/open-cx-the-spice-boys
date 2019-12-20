@@ -22,12 +22,13 @@ class _SearchScreen extends State<SearchScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
 
-              new Image.asset( 'assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
-              
-              new Text(
-                  "Peers",
-                  textAlign: TextAlign.center,
-                  style: subTitleStyle),
+//              new Image.asset( 'assets/images/toplogo_light.png', fit: BoxFit.scaleDown),
+
+              new SpearchLogoNoBack(),
+
+              new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
+
+              new SimpleFlatButton(buttonText: "Peers", onPressFunction: null),
 
 //              new SimpleButton( onPressFunction: goToSearchPerson, buttonText: "Search your Peers"),
               new SimpleButton( onPressFunction: goToContactList, buttonText: "Contact List"),
@@ -35,11 +36,9 @@ class _SearchScreen extends State<SearchScreen> {
               new Padding(
                 padding: const EdgeInsets.all(24.0),
               ),
- 
-              new Text(
-                  "Event",
-                  textAlign: TextAlign.center,
-                  style: subTitleStyle),
+
+
+              new SimpleFlatButton(buttonText: "Event", onPressFunction: null),
 
               new SimpleButton(
                   onPressFunction: goToSearchOptions, buttonText: "Options"),

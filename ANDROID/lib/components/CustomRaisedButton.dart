@@ -143,7 +143,7 @@ class SpearchLogoNoBack extends Container
                     color: colorPallete[900],
                     child:
 
-                    Image.asset('assets/images/placeholder.png',fit: BoxFit.scaleDown,
+                   new Image.asset('assets/images/placeholder.png',fit: BoxFit.scaleDown,
                         width: (MediaQuery.of(context).size.height * 0.05),
                         height: (MediaQuery.of(context).size.height* 0.05),
                         ),

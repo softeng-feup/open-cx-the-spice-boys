@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_app_test/users.dart';
 import 'package:flutter_app_test/Map2.dart';
 
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
 class SpeakerUserPage extends StatelessWidget {
   final String name;
