@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_test/MapScreen.dart';
-import 'package:flutter_app_test/OptionsScreen.dart';
-import 'HowToUseScreen.dart';
-import 'OptionsScreen.dart';
 import 'SearchScreen.dart';
-import 'components/CustomRaisedButton.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'components/constants.dart';
 
 ///  Attempt at creating colors
@@ -40,12 +34,12 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        "/": (context) => new LoginScreen(),
-        "/main": (context) => new MyHomePage(),
+        "/": (context) => new SearchScreen(),
       },
     );
   }
 }
+/*
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
@@ -183,3 +177,4 @@ class _LoginScreen extends State<LoginScreen> {
 //        Navigator.pushNamed(context, '/main');
   }
 }
+*/

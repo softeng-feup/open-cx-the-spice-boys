@@ -82,7 +82,7 @@ class _SearchScreen_event extends State<SearchScreen_event> {
                                           )
                                           ,
                                           new Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01)),
-
+ 
                                           new Text("Location:",style: subTitleStyle),
                                           new Container(
                                             color: colorPallete[800],
