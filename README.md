@@ -189,7 +189,7 @@ Our project is composed by two main modules:
 
 ### Physical architecture
 
-![Physical architecture]()
+![Physical architecture](/docs/images/physical_arc.png)
 
 The diagram showned above represents the physical architecture of the initial application ideia and not the one of the final version, due to problems with the backend's performance
 
