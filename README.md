@@ -230,14 +230,14 @@ Below you will find a small description of each one of the project iterations.
 
 ## Test
 
-There are several ways of documenting testing activities, and quality assurance in general, being the most common: a strategy, a plan, test case specifications, and test checklists.
+Most of the interaction with the app is done by tapping button like navigate to a screen or add a friend. This does not required extensive testing. However the user might input text to use some features like searching for a friend. We've used unit tests for some text inputs on our app.
+The main focus was for testing the presence of strange characters: `/ [ * } $ ,etc` in text inputs (Username, Password and Searchbar);
 
-In this section it is only expected to include the following:
+- There are some of the characters that can affect the back-end processing of data ( SQL-injection or code-injeciton for example) so it shouldn't be sent to the server.
+- Also tested for the presence of a empty string;
+- We've used the flutter_test and the flutter_driver libraries;
+- The tests files are in the project folder and can be run by the Android Studio.
 
-- test plan describing the list of features to be tested and the testing methods and tools;
-- test case specifications to verify the functionalities, using unit tests and acceptance tests.
-
-A good practice is to simplify this, avoiding repetitions, and automating the testing actions as much as possible.
 
 ## Configuration and change management
 
