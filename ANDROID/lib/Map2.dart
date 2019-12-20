@@ -70,17 +70,16 @@ class Map2 extends StatelessWidget {
     ) ;
   }
 
-  void afterFirstLayout(BuildContext context) {
-    // Calling the same function "after layout" to resolve the issue.
-    //TODO
-   ;
-  }
-
+  /// Not needed
+//  void afterFirstLayout(BuildContext context) {
+//    // Calling the same function "after layout" to resolve the issue.
+//    //TODO
+//   ;
+//  }
 
   double getLat(){
     return this.lat;
   }
-
 
   double getLong(){
     return this.long;

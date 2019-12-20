@@ -58,10 +58,10 @@ We aim to deliver a better user experience when attending an event by allowing y
 
 ![User Case Diagram](/docs/images/user_case_diagram.png)
 
+**Locate other users** - Using the app, the user can find the latest knowed location of another user. 
 
-*Locate other users* - Using the app, the user can find the latest knowed location of another user. 
+**Locate rooms of events** - Using the app. the user can access all the relevant information related to the conference's events
 
-*Locate rooms of events* - Using the app. the user can access all the relevant information related to the conference's events
 
 - **Actor**: A conference participant who downloaded the app.
 - **Description**: Improving the conference&#39;s experience by making it easier for people to find each other or a desired session location.
@@ -189,7 +189,9 @@ Our project is composed by two main modules:
 
 ### Physical architecture
 
-![Physical architecture](/docs/images/physical_arc.png)
+![Physical architecture]()
+
+The diagram showned above represents the physical architecture of the initial application ideia and not the one of the final version, due to problems with the backend's performance
 
 The diagrams showned above represent the logical and physical architectures of the initial application ideia and not the one of the final version, due to complications with the backend's performance and obstacles found during the implementation of some features.
 
@@ -256,4 +258,3 @@ Outside that, Github is being used as the repository to keep the code and other 
 
 - [Trello] (https://trello.com/b/4Lg9LMpn/esof)
 - [Miro] (https://miro.com/app/board/o9J_kwfPXrU=/)
-
