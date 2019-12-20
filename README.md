@@ -56,7 +56,7 @@ We aim to deliver a better user experience when attending an event by allowing y
 
 ## Use case diagram
 
-![User Case Diagram](/docs/images/user_case_diagram.png)
+<img src="/docs/images/user_case_diagram.png" alt="User Case Diagram" height="350" width="350">
 
 
 *Locate other users* - Using the app, the user can find the latest knowed location of another user. 
