@@ -184,12 +184,14 @@ Our project is composed by two main modules:
 
 ### Logical architecture
 
-![Logical architecture](/docs/images/logical.png)
+![Logical architecture]()
 
 
 ### Physical architecture
 
 ![Physical architecture](/docs/images/physical_arc.png)
+
+The diagrams showned above represent the logical and physical architectures of the initial application ideia and not the one of the final version, due to complications with the backend's performance and obstacles found during the implementation of some features.
 
 ### Prototype
 
